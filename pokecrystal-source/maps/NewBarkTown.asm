@@ -263,9 +263,7 @@ NewBarkTownElmsLabSignText:
 	done
 
 NewBarkTownElmsHouseSignText:
-	text "ADRIAN'S HOUSE!"
-	para "Wow, she can"
-	line "Afford a mailbox!"
+	text "ELM'S HOUSE"
 	done
 
 RoadClosedHahaText:
@@ -291,8 +289,8 @@ NewBarkTown_MapEvents:
 
 	db 4 ; bg events
 	bg_event  8,  8, BGEVENT_READ, NewBarkTownSign
-	bg_event 11,  5, BGEVENT_READ, NewBarkTownPlayersHouseSign
-	bg_event 17,  11, BGEVENT_READ, RoadClosedHaha
+	bg_event  11,  5, BGEVENT_READ, NewBarkTownPlayersHouseSign
+	bg_event  17,  11, BGEVENT_READ, RoadClosedHaha
 	bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign
 	bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign
 
