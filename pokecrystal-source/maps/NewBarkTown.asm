@@ -273,8 +273,8 @@ NewBarkTownElmsLabSignText:
 NewBarkTownElmsHouseSignText:
 	text "KAREN'S HOUSE"
 	line "How adorable!"
-	cont "They can afford"
-	line "a mailbox."
+	cont "She can afford"
+	cont "a mailbox!"
 	done
 
 NewBarkTown_MapEvents:
@@ -285,8 +285,6 @@ NewBarkTown_MapEvents:
 	warp_event 13,  5, PLAYERS_HOUSE_1F, 1
 	warp_event  3, 11, PLAYERS_NEIGHBORS_HOUSE, 1
 	warp_event 11, 13, ELMS_HOUSE, 1
-
-	db 2 ; coord events
 
 	db 4 ; bg events
 	bg_event  4,  10, BGEVENT_READ, NewBarkTownSign
