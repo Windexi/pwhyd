@@ -1,2 +1,3 @@
-# pwhyd
-Pokemon: What Have You Done
+Windexi presents...
+# Pokemon: What Have You Done
+##### A GBC based custom made Pokemon experience
