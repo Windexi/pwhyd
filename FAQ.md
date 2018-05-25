@@ -4,7 +4,7 @@
 A: Nothing. There are hundreds of hacks of Pokémon games in existence. Why should you waste your time on this one? You shouldn't. Who ever heard of a Pokémon fan game where the main character is a complete failure? That's the worst idea I've ever heard. Why does this exist? Pokémon is about becoming the very _best_. Not about being the very _worst_! ...And why does everyone hate you so much? Is there a reason?
 
 ##### Q: Okay, Haha. Very funny. Bashing your own game is trendy now, I see. Be real with me though, what are the cool things about this ROM?
-A: How about, a deranged Professor Oak with Alzheimer's? A dad who cares more about being the Pokémon champion than raising his own kid? A mom who is more interested in shooting up than her worthless son who lives with some stranger named Vinny? Seriously, who is Vinny? He just appeared one day. I don't even think he's related to you!
+A: How about, a deranged Professor Oak with Alzheimer's? A dad who cares more about being the Pokémon champion than raising his own kid? A mom who is more interested in shooting up than hanging around her worthless son who lives with some stranger named Vinny? Seriously, who is Vinny? He just appeared one day. I don't even think he's related to you!
 
 ##### Q: Alright, alright, alright... I get it. So this game is SFW?
 A: Oh, definitely not.
