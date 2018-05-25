@@ -1,6 +1,7 @@
 	const_def 2 ; object constants
 	const NEWBARKTOWN_TEACHER
 	const NEWBARKTOWN_FISHER
+	const NEWBARKTOWN_SILVER
 
 NewBarkTown_MapScripts:
 	db 2 ; scene scripts
