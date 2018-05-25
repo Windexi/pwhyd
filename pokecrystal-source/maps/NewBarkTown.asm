@@ -71,6 +71,16 @@ NewBarkTown_TeacherStopsYouScene2:
 
 NewBarkTownTeacherScript:
 	faceplayer
+	opentext
+	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
+	iftrue .CallMom
+	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
+	iftrue .TellMomYoureLeaving
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iftrue .MonIsAdorable
+	writetext Text_GearIsImpressive
+	waitbutton
+	closetext
 	end
 
 .MonIsAdorable:
@@ -117,9 +127,6 @@ NewBarkTownSilverScript:
 
 NewBarkTownSign:
 	jumptext NewBarkTownSignText
-
-RoadClosedHaha:
-	jumptext RoadClosedHahaText
 
 NewBarkTownPlayersHouseSign:
 	jumptext NewBarkTownPlayersHouseSignText
@@ -232,7 +239,11 @@ Text_CallMomOnGear:
 	done
 
 Text_ElmDiscoveredNewMon:
-	text "Go to hell!"
+	text "Yo, <PLAYER>!"
+
+	para "I hear PROF.ELM"
+	line "discovered some"
+	cont "new #MON."
 	done
 
 NewBarkTownRivalText1:
@@ -250,8 +261,10 @@ NewBarkTownRivalText2:
 
 NewBarkTownSignText:
 	text "NEW BARK TOWN"
-	para "Unfortunately,"
-	line "still existing."
+
+	para "The Town Where the"
+	line "Winds of a New"
+	cont "Beginning Blow"
 	done
 
 NewBarkTownPlayersHouseSignText:
@@ -266,14 +279,6 @@ NewBarkTownElmsHouseSignText:
 	text "ELM'S HOUSE"
 	done
 
-RoadClosedHahaText:
-	text "Go away!"
-	para "Road's closed,"
-	para "because I"
-	line "said so!"
-	para "Muhuahaha!"
-	done
-	
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -284,17 +289,16 @@ NewBarkTown_MapEvents:
 	warp_event 11, 13, ELMS_HOUSE, 1
 
 	db 2 ; coord events
-	coord_event  0,  0, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene1
-	coord_event  0,  0, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
+	coord_event  1,  8, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene1
+	coord_event  1,  9, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
 
 	db 4 ; bg events
 	bg_event  8,  8, BGEVENT_READ, NewBarkTownSign
-	bg_event  11,  5, BGEVENT_READ, NewBarkTownPlayersHouseSign
-	bg_event  17,  11, BGEVENT_READ, RoadClosedHaha
+	bg_event 11,  5, BGEVENT_READ, NewBarkTownPlayersHouseSign
 	bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign
 	bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign
 
 	db 3 ; object events
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
-	object_event  5, 13, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
+	object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3,  2, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
