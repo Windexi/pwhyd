@@ -157,10 +157,6 @@ NewBarkTown_MapEvents:
 	warp_event  3, 11, PLAYERS_NEIGHBORS_HOUSE, 1
 	warp_event 11, 13, ELMS_HOUSE, 1
 
-	db 2 ; coord events
-	coord_event  0,  0, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene1
-	coord_event  0,  0, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
-
 	db 4 ; bg events
 	bg_event  4,  10, BGEVENT_READ, NewBarkTownSign
 	bg_event 17,  11, BGEVENT_READ, RoadClosedHaha
