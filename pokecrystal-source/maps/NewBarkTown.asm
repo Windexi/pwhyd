@@ -268,6 +268,14 @@ NewBarkTownElmsHouseSignText:
 	line "Afford a mailbox!"
 	done
 
+RoadClosedHahaText:
+	text "Go away!"
+	para "Road's closed,"
+	para "because I"
+	line "said so!"
+	para "Muhuahaha!"
+	done
+	
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
