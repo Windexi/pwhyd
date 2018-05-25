@@ -73,17 +73,13 @@ NewBarkTownElmsLabSignText:
 
 NewBarkTownElmsHouseSignText:
 	text "ADRIAN'S HOUSE!"
-	para "Wow! She can afford"
-	para "a mailbox!"
 	done
 
 RoadClosedHahaText:
 	text "Go away!"
-	
 	para "Road's closed,"
 	para "because I"
 	line "said so!"
-	
 	para "Muhuahaha!"
 	done
 	
