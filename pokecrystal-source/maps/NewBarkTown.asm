@@ -262,9 +262,8 @@ NewBarkTownRivalText2:
 NewBarkTownSignText:
 	text "NEW BARK TOWN"
 
-	para "The Town Where the"
-	line "Winds of a New"
-	cont "Beginning Blow"
+	para "Unfortunately,"
+	line "still existing."
 	done
 
 NewBarkTownPlayersHouseSignText:
@@ -276,7 +275,10 @@ NewBarkTownElmsLabSignText:
 	done
 
 NewBarkTownElmsHouseSignText:
-	text "ELM'S HOUSE"
+	text "KAREN'S HOUSE"
+	line "How adorable!"
+	cont "They can afford"
+	line "a mailbox."
 	done
 
 NewBarkTown_MapEvents:
@@ -293,7 +295,7 @@ NewBarkTown_MapEvents:
 	coord_event  1,  9, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
 
 	db 4 ; bg events
-	bg_event  8,  8, BGEVENT_READ, NewBarkTownSign
+	bg_event  4,  8, BGEVENT_READ, NewBarkTownSign
 	bg_event 11,  5, BGEVENT_READ, NewBarkTownPlayersHouseSign
 	bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign
 	bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign
