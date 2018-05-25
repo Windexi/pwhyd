@@ -1,3 +1,3 @@
 Windexi presents...
-# Pokemon: What Have You Done
-##### A GBC based custom made Pokemon experience
+# Pokémon: What Have You Done
+##### A GBC based custom made Pokémon experience
