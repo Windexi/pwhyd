@@ -1,7 +1,6 @@
 	const_def 2 ; object constants
 	const NEWBARKTOWN_TEACHER
 	const NEWBARKTOWN_FISHER
-	const NEWBARKTOWN_SILVER
 
 NewBarkTown_MapScripts:
 	db 2 ; scene scripts
@@ -26,53 +25,6 @@ NewBarkTownTeacherScript:
 	faceplayer
 	end
 
-NewBarkTown_TeacherStopsYouScene1:
-	playmusic MUSIC_MOM
-	turnobject NEWBARKTOWN_TEACHER, LEFT
-	opentext
-	writetext Text_WaitPlayer
-	waitbutton
-	closetext
-	turnobject PLAYER, RIGHT
-	applymovement NEWBARKTOWN_TEACHER, Movement_TeacherRunsToYou1_NBT
-	opentext
-	writetext Text_WhatDoYouThinkYoureDoing
-	waitbutton
-	closetext
-	follow NEWBARKTOWN_TEACHER, PLAYER
-	applymovement NEWBARKTOWN_TEACHER, Movement_TeacherBringsYouBack1_NBT
-	stopfollow
-	opentext
-	writetext Text_ItsDangerousToGoAlone
-	waitbutton
-	closetext
-	special RestartMapMusic
-	end
-
-NewBarkTown_TeacherStopsYouScene2:
-	playmusic MUSIC_MOM
-	turnobject NEWBARKTOWN_TEACHER, LEFT
-	opentext
-	writetext Text_WaitPlayer
-	waitbutton
-	closetext
-	turnobject PLAYER, RIGHT
-	applymovement NEWBARKTOWN_TEACHER, Movement_TeacherRunsToYou2_NBT
-	turnobject PLAYER, UP
-	opentext
-	writetext Text_WhatDoYouThinkYoureDoing
-	waitbutton
-	closetext
-	follow NEWBARKTOWN_TEACHER, PLAYER
-	applymovement NEWBARKTOWN_TEACHER, Movement_TeacherBringsYouBack2_NBT
-	stopfollow
-	opentext
-	writetext Text_ItsDangerousToGoAlone
-	waitbutton
-	closetext
-	special RestartMapMusic
-	end
-
 .MonIsAdorable:
 	writetext Text_YourMonIsAdorable
 	waitbutton
@@ -94,27 +46,6 @@ NewBarkTown_TeacherStopsYouScene2:
 NewBarkTownFisherScript:
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
 
-NewBarkTownSilverScript:
-	opentext
-	writetext NewBarkTownRivalText1
-	waitbutton
-	closetext
-	turnobject NEWBARKTOWN_SILVER, LEFT
-	opentext
-	writetext NewBarkTownRivalText2
-	waitbutton
-	closetext
-	follow PLAYER, NEWBARKTOWN_SILVER
-	applymovement PLAYER, Movement_SilverPushesYouAway_NBT
-	stopfollow
-	pause 5
-	turnobject NEWBARKTOWN_SILVER, DOWN
-	pause 5
-	playsound SFX_TACKLE
-	applymovement PLAYER, Movement_SilverShovesYouOut_NBT
-	applymovement NEWBARKTOWN_SILVER, Movement_SilverReturnsToTheShadows_NBT
-	end
-
 NewBarkTownSign:
 	jumptext NewBarkTownSignText
 
@@ -129,55 +60,6 @@ NewBarkTownElmsLabSign:
 
 NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
-
-Movement_TeacherRunsToYou1_NBT:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step_end
-
-Movement_TeacherRunsToYou2_NBT:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	turn_head DOWN
-	step_end
-
-Movement_TeacherBringsYouBack1_NBT:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	turn_head LEFT
-	step_end
-
-Movement_TeacherBringsYouBack2_NBT:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	turn_head LEFT
-	step_end
-
-Movement_SilverPushesYouAway_NBT:
-	turn_head UP
-	step DOWN
-	step_end
-
-Movement_SilverShovesYouOut_NBT:
-	turn_head UP
-	fix_facing
-	jump_step DOWN
-	remove_fixed_facing
-	step_end
-
-Movement_SilverReturnsToTheShadows_NBT:
-	step RIGHT
-	step_end
 
 Text_GearIsImpressive:
 	text "Wow, your #GEAR"
@@ -235,19 +117,6 @@ Text_ElmDiscoveredNewMon:
 	text "Go to hell!"
 	done
 
-NewBarkTownRivalText1:
-	text "<……>"
-
-	para "So this is the"
-	line "famous ELM #MON"
-	cont "LAB…"
-	done
-
-NewBarkTownRivalText2:
-	text "…What are you"
-	line "staring at?"
-	done
-
 NewBarkTownSignText:
 	text "NEW BARK TOWN"
 
@@ -265,16 +134,15 @@ NewBarkTownElmsLabSignText:
 
 NewBarkTownElmsHouseSignText:
 	text "ADRIAN'S HOUSE!"
-	
 	para "Wow! She can afford"
-	line "a mailbox!"
+	para "a mailbox!"
 	done
 
 RoadClosedHahaText:
 	text "Go away!"
 	
 	para "Road's closed,"
-	line "because I"
+	text "because I"
 	line "said so!"
 	
 	para "Muhuahaha!"
