@@ -118,6 +118,9 @@ NewBarkTownSilverScript:
 NewBarkTownSign:
 	jumptext NewBarkTownSignText
 
+RoadClosedHaha:
+	jumptext RoadClosedHahaText
+
 NewBarkTownPlayersHouseSign:
 	jumptext NewBarkTownPlayersHouseSignText
 
@@ -261,9 +264,22 @@ NewBarkTownElmsLabSignText:
 	done
 
 NewBarkTownElmsHouseSignText:
-	text "ELM'S HOUSE"
+	text "ADRIAN'S HOUSE!"
+	
+	para "Wow! She can afford"
+	line "a mailbox!"
 	done
 
+RoadClosedHahaText:
+	text "Go away!"
+	
+	para "Road's closed,"
+	line "because I"
+	line "said so!"
+	
+	para "Muhuahaha!"
+	done
+	
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -279,6 +295,7 @@ NewBarkTown_MapEvents:
 
 	db 4 ; bg events
 	bg_event  4,  10, BGEVENT_READ, NewBarkTownSign
+	bg_event 17,  11, BGEVENT_READ, RoadClosedHaha
 	bg_event 11,  5, BGEVENT_READ, NewBarkTownPlayersHouseSign
 	bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign
 	bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign
@@ -286,4 +303,3 @@ NewBarkTown_MapEvents:
 	db 3 ; object events
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event  5, 13, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
-	object_event  3,  2, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
