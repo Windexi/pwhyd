@@ -34,7 +34,7 @@ NewBarkTownTeacherScript:
 	end
 
 NewBarkTownFisherScript:
-	jumptextfaceplayer Text_ElmDiscoveredNewMon
+	jumptext Text_ElmDiscoveredNewMon
 
 NewBarkTownSign:
 	jumptext NewBarkTownSignText
@@ -80,7 +80,7 @@ RoadClosedHahaText:
 	text "Go away!"
 	
 	para "Road's closed,"
-	line "because I"
+	para "because I"
 	line "said so!"
 	
 	para "Muhuahaha!"
