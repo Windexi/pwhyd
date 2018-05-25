@@ -69,20 +69,6 @@ NewBarkTown_TeacherStopsYouScene2:
 	special RestartMapMusic
 	end
 
-NewBarkTownTeacherScript:
-	faceplayer
-	opentext
-	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	iftrue .CallMom
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .TellMomYoureLeaving
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .MonIsAdorable
-	writetext Text_GearIsImpressive
-	waitbutton
-	closetext
-	end
-
 .MonIsAdorable:
 	writetext Text_YourMonIsAdorable
 	waitbutton
