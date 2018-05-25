@@ -36,29 +36,28 @@ NewBarkTownTeacherScript:
 
 NewBarkTownFisherScript:
 	jumptext Text_ElmDiscoveredNewMon
-
+	end
 NewBarkTownSign:
 	jumptext NewBarkTownSignText
-
+	end
 RoadClosedHaha:
 	jumptext RoadClosedHahaText
-
+	end
 NewBarkTownPlayersHouseSign:
 	jumptext NewBarkTownPlayersHouseSignText
-
+	end
 NewBarkTownElmsLabSign:
 	jumptext NewBarkTownElmsLabSignText
-
+	end
 NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
-
+	end
 Text_ElmDiscoveredNewMon:
 	text "Go to hell!"
 	done
 
 NewBarkTownSignText:
 	text "NEW BARK TOWN"
-
 	para "Unfortunately,"
 	line "still existing."
 	done
@@ -73,6 +72,8 @@ NewBarkTownElmsLabSignText:
 
 NewBarkTownElmsHouseSignText:
 	text "ADRIAN'S HOUSE!"
+	para "Wow, she can"
+	line "Afford a mailbox!"
 	done
 
 RoadClosedHahaText:
@@ -93,8 +94,8 @@ NewBarkTown_MapEvents:
 	warp_event 11, 13, ELMS_HOUSE, 1
 	
 	db 2 ; coord events
-	coord_event  0,  0, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene1
-	coord_event  0,  0, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
+	coord_event  0,  1, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene1
+	coord_event  0,  2, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
 
 	db 4 ; bg events
 	bg_event  4,  10, BGEVENT_READ, NewBarkTownSign
