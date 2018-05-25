@@ -17,3 +17,5 @@ A: Just because you asked that, I'm going to make the rival the nicest person in
 
 ##### Q: If you're such a loser, do you even get a Pokedex? Or... catch your first legendary? You're sucking all the fun out of Pokémon games!
 A: Why are you still here?
+
+[Go back](https://github.com/Windexi/pwhyd)
