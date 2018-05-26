@@ -1,28 +1,42 @@
 _OakText6::
-	text "Now, what did you"
-	line "say your name was?"
+	text "Who is this?"
+	line "Are you my friend?"
 	prompt
 
 _OakText7::
-	text "<PLAYER>, are you"
-	line "ready?"
+	text "<PLAYER>!"
+	para "Can you get me"
+	line "some water?"
 
-	para "Your very own"
-	line "#MON story is"
-	cont "about to unfold."
+	para "My head hurts."
+	line "My memory..."
+	para "it isn't what it"
+	line "used to be."
 
-	para "You'll face fun"
-	line "times and tough"
-	cont "challenges."
+	para "Alright."
+	para "I'll try my best"
+	line "on this next part."
 
-	para "A world of dreams"
-	line "and adventures"
+	para "Ahem."
 
-	para "with #MON"
-	line "awaits! Let's go!"
+	para "<PLAYER>!"
+	line "DO YOU GET READY?"
+	line "YOUR STORY WILL"
+	line "START FROM NOW"
+	line "AT ONCE"
+	line "FOR THE FUTURE YOU"
+	line "WILL MEET MANY"
+	line "TRIALS AND"
+	line "HARDSHIPS,"
+	line "BITTER AND SWEET"
+	line "TO EXPLORE THE"
+	line "DREAMS"
+	line "LET'S GO TO THE"
+	line "MONSTER'S WORLD"
+	line "START"
+	line "SEE YOU LATER"
+	text "there are 2 genders"
 
-	para "I'll be seeing you"
-	line "later!"
 	done
 
 UnknownText_0x1c40e6::

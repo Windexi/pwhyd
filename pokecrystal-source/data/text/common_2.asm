@@ -1496,8 +1496,8 @@ _OakText1::
 	line ".....hng?"
 
 	para "Who's there?!"
-	line "Stop! I'm"
-	para "warning you!"
+	line "Stop!"
+	para "I'm warning you!"
 
 	para "Don't come closer!"
 
