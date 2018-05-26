@@ -20,7 +20,7 @@ _OakText7::
 	para "Ahem."
 
 	para "<PLAYER>!"
-	cont "DO YOU GET READY?"
+	line "DO YOU GET READY?"
 	cont "YOUR STORY WILL"
 	cont "START FROM NOW"
 	cont "AT ONCE"
@@ -35,7 +35,7 @@ _OakText7::
 	cont "MONSTER'S WORLD"
 	cont "START"
 	cont "SEE YOU LATER"
-	cont "there are 2 genders"
+	line "there are 2 genders"
 
 	done
 
