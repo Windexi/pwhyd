@@ -574,7 +574,7 @@ MenuData_0x484f9: ; 0x484f9
 	db 2 ; items
 Strings_484fb:
 String_484fb: db "Boy@"
-String_484ff: db "Boy@"
+String_484ff: db "Girl@"
 ; 0x48504
 
 MenuHeader_0x48504: ; 0x48504
