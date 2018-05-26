@@ -54,7 +54,7 @@ InitGender: ; 48dcb (12:4dcb)
 	db STATICMENU_CURSOR | STATICMENU_WRAP | STATICMENU_DISABLE_B ; flags
 	db 2 ; items
 	db "Boy@"
-	db "Girl@"
+	db "Boy@"
 ; 0x48e0f
 
 TextJump_AreYouABoyOrAreYouAGirl: ; 0x48e0f
