@@ -58,7 +58,7 @@ InitGender: ; 48dcb (12:4dcb)
 ; 0x48e0f
 
 TextJump_AreYouABoyOrAreYouAGirl: ; 0x48e0f
-	; Are you a boy? Or are you a girl?
+	; Are you a boy? Or are you a boy?
 	text_jump Text_AreYouABoyOrAreYouAGirl
 	db "@"
 ; 0x48e14
