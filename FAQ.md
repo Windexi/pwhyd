@@ -13,7 +13,7 @@ A: Oh, definitely not.
 A: Nope. Nothing.
 
 ##### Q: What about your rival? He/she must at least be challenging or enough of a douchebag to make you hate them.
-A: Just because you asked that, I'm going to make the rival the nicest person in existence. Ah! Now I have another great idea.
+A: Just because you asked that, I'm going to make the rival the nicest person in existence. Ah! Now I have another great idea...
 
 ##### Q: If you're such a loser, do you even get a Pokedex? Or... catch your first legendary? You're sucking all the fun out of Pokémon games!
 A: Why are you still here?
