@@ -1492,49 +1492,51 @@ UnknownText_0x1c1cf3::
 	done
 
 _OakText1::
-	text "Hello! Sorry to"
-	line "keep you waiting!"
+	text "..."
+	line ".....hng?"
 
-	para "Welcome to the"
-	line "world of #MON!"
+	para "Who's there?!"
+	line "Stop! I'm"
+	para "warning you!"
 
-	para "My name is OAK."
+	para "Don't come closer!"
 
-	para "People call me the"
-	line "#MON PROF."
+	para "Ow... my head..."
+	line "Where are my meds?"
 	prompt
 
 _OakText2::
-	text "This world is in-"
-	line "habited by crea-"
-	cont "tures that we call"
-	cont "#MON.@@"
+	text "Ah fuck."
+	line "Here we go."
+	para "Pop that shit.@@"
 
 _OakText3::
 	text_waitbutton
 	db "@@"
 
 _OakText4::
-	text "People and #MON"
-	line "live together by"
+	text "That's better..."
+	line "but things are"
+	para "still fuzzy..."
 
-	para "supporting each"
-	line "other."
+	para "OUCH!"
+	para "HUH? WHO'S THERE?"
 
-	para "Some people play"
-	line "with #MON, some"
-	cont "battle with them."
+	para "Ew, it's you. No"
+	line "one likes you!"
+	para "Go awa-"
 	prompt
 
 _OakText5::
-	text "But we don't know"
-	line "everything about"
-	cont "#MON yet."
+	text "AGH! OUCH!"
+	line "Huh? Who's there?"
+	para "The fuck you"
+	line "looking at?"
 
-	para "There are still"
-	line "many mysteries to"
-	cont "solve."
+	para "Want a POKéDEX"
+	line "my ass! Get out of"
+	cont "my house!"
 
-	para "That's why I study"
-	line "#MON every day."
+	para "OW!"
+	line "Huh? Do I know you?"
 	prompt
