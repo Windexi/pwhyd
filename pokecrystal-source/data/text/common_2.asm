@@ -1529,7 +1529,7 @@ _OakText4::
 
 _OakText5::
 	text "AGH! OUCH!"
-	line "Huh? Who's there?"
+	line "MMmmmmNNNNNNGGG"
 	para "The fuck you"
 	line "looking at?"
 
@@ -1538,5 +1538,5 @@ _OakText5::
 	cont "my house!"
 
 	para "OW!"
-	line "Huh? Do I know you?"
+	line "Do I know you?"
 	prompt
