@@ -187,7 +187,7 @@ Movement_SilverReturnsToTheShadows_NBT:
 	step_end
 
 Text_GearIsImpressive:
-	faceplayer
+	para ""
 	done
 
 Text_WaitPlayer:
