@@ -1,5 +1,8 @@
-Windexi presents...
-<a name="top" href="http://github.com/Windexi/pwhyd/"><img align="left" style="margin: -45px;" src="https://github.com/Windexi/pwhyd/blob/master/pwhyd.png?raw=true"></a>
+# Windexi presents...
+
+<a name="top" href="http://github.com/Windexi/pwhyd/"><img align="middle" style="margin: -45px;" src="https://github.com/Windexi/pwhyd/blob/master/pwhyd.png?raw=true"></a>
+
+
 ##### A worthless pile of garbage no one should play!
 
 A few things:
