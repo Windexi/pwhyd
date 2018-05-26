@@ -16,9 +16,9 @@ BoxNameInputLower:
 	db "UPPER  DEL   END "
 
 NameInputUpper:
-	db "A B C D E F G H I"
-	db "J K L M N O P Q R"
-	db "S T U V W X Y Z  "
+	db "Y O U A R E G A Y"
+	db "L O L L O L L O L"
+	db "H A H A U F A G  "
 	db "- ? ! / . ,      "
 	db "lower  DEL   END "
 
