@@ -189,7 +189,7 @@ Movement_SilverReturnsToTheShadows_NBT:
 Text_GearIsImpressive:
 	text "heheh..."
 
-	para "HELP SOMEONE!"
+	para "HELP, SOMEONE!"
 	line "HE RAPE ME!"
 	done
 
@@ -297,4 +297,3 @@ NewBarkTown_MapEvents:
 	db 3 ; object events
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 15, 13, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
-	object_event  3,  2, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownSilverScript, EVENT_RIVAL_NEW_BARK_TOWN
