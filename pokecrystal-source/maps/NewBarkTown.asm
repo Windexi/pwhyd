@@ -187,15 +187,10 @@ Movement_SilverReturnsToTheShadows_NBT:
 	step_end
 
 Text_GearIsImpressive:
-<<<<<<< HEAD
-	para ""
-=======
-	text "Wow, your #GEAR"
-	line "is impressive!"
+	text "heheh..."
 
-	para "Did your mom get"
-	line "it for you?"
->>>>>>> parent of c7b919f... Edited teacher and fisherman text in NBT
+	para "HELP SOMEONE!"
+	line "HE RAPE ME!"
 	done
 
 Text_WaitPlayer:
@@ -243,11 +238,7 @@ Text_CallMomOnGear:
 	done
 
 Text_ElmDiscoveredNewMon:
-	text "Yo, <PLAYER>!"
-
-	para "I hear PROF.ELM"
-	line "discovered some"
-	cont "new #MON."
+	text "Go to hell!"
 	done
 
 NewBarkTownRivalText1:
