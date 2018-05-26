@@ -651,7 +651,7 @@ Text_YouCantUseItInABattle::
 
 Text_AreYouABoyOrAreYouAGirl::
 	text "Are you a boy?"
-	line "Or are you a girl?"
+	line "Or are you a boy?"
 	done
 
 UnknownText_0x1c0cc6::
