@@ -2326,12 +2326,12 @@ wPlayerGender:: ; d472
 ;	0 male
 ;	1 female
 	db
-wd473:: ds 1
-wd474:: ds 1
-wd475:: ds 1
-wd476:: ds 1
-wd477:: ds 1
-wd478:: ds 1
+wd473:: ds 0
+wd474:: ds 0
+wd475:: ds 0
+wd476:: ds 0
+wd477:: ds 0
+wd478:: ds 0
 wCrystalDataEnd::
 
 wd479:: ds 2

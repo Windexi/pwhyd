@@ -35,8 +35,6 @@ _OakText7::
 	cont "MONSTER'S WORLD"
 	cont "START"
 	cont "SEE YOU LATER"
-	line "there are 2 genders"
-
 	done
 
 UnknownText_0x1c40e6::
