@@ -22,7 +22,6 @@ MeetMomLeftScript:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 
 MeetMomRightScript:
-	playmusic MUSIC_MOM
 	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM1, 15
 	turnobject PLAYER, LEFT
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -100,7 +99,6 @@ MeetMomScript:
 	end
 
 MeetMomTalkedScript:
-	playmusic MUSIC_LOOKHIKER
 	jump MeetMomScript
 
 GearName:
@@ -157,18 +155,6 @@ MomScript:
 	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
 	end
 
-TVScript:
-	jumptext TVText
-
-StoveScript:
-	jumptext StoveText
-
-SinkScript:
-	jumptext SinkText
-
-FridgeScript:
-	jumptext FridgeText
-
 MovementData_0x7a5fc:
 	turn_head RIGHT
 	step_end
@@ -224,6 +210,10 @@ UnknownText_0x7a957:
 	text "shoutouts to simpleflips"
 	done
 
+NeighborText:
+	text "shoutouts to simpleflips"
+	done
+
 PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -237,4 +227,4 @@ PlayersHouse1F_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  1,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MeetMomScript, EVENT_PLAYERS_HOUSE_1F_MOM1
+	object_event  1,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
