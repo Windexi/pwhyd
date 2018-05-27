@@ -1,3 +1,9 @@
+	const_def 2 ; object constants
+	const PLAYERSHOUSE2F_CONSOLE
+	const PLAYERSHOUSE2F_DOLL_1
+	const PLAYERSHOUSE2F_DOLL_2
+	const PLAYERSHOUSE2F_BIG_DOLL
+
 PlayersHouse2F_MapScripts:
 	db 0 ; scene scripts
 
@@ -47,7 +53,7 @@ PlayersHouse2F_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 1 ; bg events
 	bg_event  3,  2, BGEVENT_READ, PlayersHouseMrPlant
 
 	db 0 ; object events
