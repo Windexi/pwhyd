@@ -262,9 +262,8 @@ NewBarkTownRivalText2:
 
 NewBarkTownSignText:
 	text "NEW BARK TOWN"
-
 	para "Unfortunately,"
-	line "still in existence."
+	line "existing."
 	done
 
 NewBarkTownPlayersHouseSignText:
@@ -294,7 +293,7 @@ NewBarkTownClosedSignText:
 	para "...because I"
 	line "hate you!"
 	para "Muhuahaha!"
-	cont "    --Windexi"
+	line "  --Windexi"
 	done
 
 NewBarkTown_MapEvents:
@@ -311,7 +310,7 @@ NewBarkTown_MapEvents:
 	coord_event  0,  0, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
 
 	db 6 ; bg events
-	bg_event  8,  8, BGEVENT_READ, NewBarkTownSign
+	bg_event  4, 10, BGEVENT_READ, NewBarkTownSign
 	bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign
 	bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign
 	bg_event 12,  6, BGEVENT_READ, NewBarkTownStinkyCave
