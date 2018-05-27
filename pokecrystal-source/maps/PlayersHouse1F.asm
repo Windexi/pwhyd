@@ -29,7 +29,6 @@ MeetMomRightScript:
 
 MeetMomScript:
 	opentext
-	writetext UnknownText_0x7a604
 	buttonsound
 	stringtotext GearName, MEM_BUFFER_1
 	scall PlayersHouse1FReceiveItemStd
@@ -39,11 +38,9 @@ MeetMomScript:
 	setscene SCENE_FINISHED
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
-	writetext UnknownText_0x7a6bd
 	buttonsound
 	special SetDayOfWeek
 .SetDayOfWeek:
-	writetext UnknownText_0x7a742
 	yesorno
 	iffalse .WrongDay
 	special InitialSetDSTFlag
