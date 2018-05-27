@@ -100,7 +100,7 @@ MeetMomScript:
 	end
 
 MeetMomTalkedScript:
-	playmusic MUSIC_MOM
+	playmusic MUSIC_LOOKHIKER
 	jump MeetMomScript
 
 GearName:
@@ -150,31 +150,6 @@ MomScript:
 	closetext
 	end
 
-NeighborScript:
-	faceplayer
-	opentext
-	checktime MORN
-	iftrue .MornScript
-	checktime DAY
-	iftrue .DayScript
-	checktime NITE
-	iftrue .NiteScript
-
-.MornScript:
-	writetext NeighborMornIntroText
-	buttonsound
-	jump .Main
-
-.DayScript:
-	writetext NeighborDayIntroText
-	buttonsound
-	jump .Main
-
-.NiteScript:
-	writetext NeighborNiteIntroText
-	buttonsound
-	jump .Main
-
 .Main:
 	writetext NeighborText
 	waitbutton
@@ -211,176 +186,42 @@ MovementData_0x7a602:
 	step_end
 
 UnknownText_0x7a604:
-	text "Oh, <PLAYER>…! Our"
-	line "neighbor, PROF."
-
-	para "ELM, was looking"
-	line "for you."
-
-	para "He said he wanted"
-	line "you to do some-"
-	cont "thing for him."
-
-	para "Oh! I almost for-"
-	line "got! Your #MON"
-
-	para "GEAR is back from"
-	line "the repair shop."
-
-	para "Here you go!"
-	done
+	text "shoutouts to simpleflips"
 
 UnknownText_0x7a6bd:
-	text "#MON GEAR, or"
-	line "just #GEAR."
-
-	para "It's essential if"
-	line "you want to be a"
-	cont "good trainer."
-
-	para "Oh, the day of the"
-	line "week isn't set."
-
-	para "You mustn't forget"
-	line "that!"
+	text "shoutouts to simpleflips"
 	done
 
 UnknownText_0x7a742:
-	text "Is it Daylight"
-	line "Saving Time now?"
+	text "shoutouts to simpleflips"
 	done
 
 UnknownText_0x7a763:
-	text "Come home to"
-	line "adjust your clock"
-
-	para "for Daylight"
-	line "Saving Time."
-
-	para "By the way, do you"
-	line "know how to use"
-	cont "the PHONE?"
+	text "shoutouts to simpleflips"
 	done
 
 UnknownText_0x7a7cb:
-	text "Don't you just"
-	line "turn the #GEAR"
-
-	para "on and select the"
-	line "PHONE icon?"
+	text "shoutouts to simpleflips"
 	done
 
 UnknownText_0x7a807:
-	text "I'll read the"
-	line "instructions."
-
-	para "Turn the #GEAR"
-	line "on and select the"
-	cont "PHONE icon."
+	text "shoutouts to simpleflips"
 	done
 
 UnknownText_0x7a850:
-	text "Phone numbers are"
-	line "stored in memory."
-
-	para "Just choose a name"
-	line "you want to call."
-
-	para "Gee, isn't that"
-	line "convenient?"
+	text "shoutouts to simpleflips"
 	done
 
 UnknownText_0x7a8b5:
-	text "PROF.ELM is wait-"
-	line "ing for you."
-
-	para "Hurry up, baby!"
+	text "shoutouts to simpleflips"
 	done
 
 UnknownText_0x7a8e5:
-	text "So, what was PROF."
-	line "ELM's errand?"
-
-	para "…"
-
-	para "That does sound"
-	line "challenging."
-
-	para "But, you should be"
-	line "proud that people"
-	cont "rely on you."
+	text "shoutouts to simpleflips"
 	done
 
 UnknownText_0x7a957:
-	text "<PLAYER>, do it!"
-
-	para "I'm behind you all"
-	line "the way!"
-	done
-
-NeighborMornIntroText:
-	text "Good morning,"
-	line "<PLAY_G>!"
-
-	para "I'm visiting!"
-	done
-
-NeighborDayIntroText:
-	text "Hello, <PLAY_G>!"
-	line "I'm visiting!"
-	done
-
-NeighborNiteIntroText:
-	text "Good evening,"
-	line "<PLAY_G>!"
-
-	para "I'm visiting!"
-	done
-
-NeighborText:
-	text "<PLAY_G>, have you"
-	line "heard?"
-
-	para "My daughter is"
-	line "adamant about"
-
-	para "becoming PROF."
-	line "ELM's assistant."
-
-	para "She really loves"
-	line "#MON!"
-	done
-
-StoveText:
-	text "Mom's specialty!"
-
-	para "CINNABAR VOLCANO"
-	line "BURGER!"
-	done
-
-SinkText:
-	text "The sink is spot-"
-	line "less. Mom likes it"
-	cont "clean."
-	done
-
-FridgeText:
-	text "Let's see what's"
-	line "in the fridge…"
-
-	para "FRESH WATER and"
-	line "tasty LEMONADE!"
-	done
-
-TVText:
-	text "There's a movie on"
-	line "TV: Stars dot the"
-
-	para "sky as two boys"
-	line "ride on a train…"
-
-	para "I'd better get"
-	line "rolling too!"
+	text "shoutouts to simpleflips"
 	done
 
 PlayersHouse1F_MapEvents:
@@ -390,11 +231,10 @@ PlayersHouse1F_MapEvents:
 	warp_event  5,  7, NEW_BARK_TOWN, 2
 	warp_event  7,  1, PLAYERS_HOUSE_2F, 1
 
-	db 2 ; coord events
-	coord_event  8,  4, SCENE_DEFAULT, MeetMomLeftScript
-	coord_event  9,  4, SCENE_DEFAULT, MeetMomRightScript
+	db 1 ; coord events
+	coord_event  5,  4, SCENE_DEFAULT, MeetMomLeftScript
 
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  1,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	object_event  1,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MeetMomScript, EVENT_PLAYERS_HOUSE_1F_MOM1
