@@ -386,24 +386,15 @@ TVText:
 PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
-	warp_event  6,  7, NEW_BARK_TOWN, 2
-	warp_event  7,  7, NEW_BARK_TOWN, 2
-	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
+	db 2 ; warp events
+	warp_event  5,  7, NEW_BARK_TOWN, 2
+	warp_event  7,  1, PLAYERS_HOUSE_2F, 1
 
 	db 2 ; coord events
 	coord_event  8,  4, SCENE_DEFAULT, MeetMomLeftScript
 	coord_event  9,  4, SCENE_DEFAULT, MeetMomRightScript
 
-	db 4 ; bg events
-	bg_event  0,  1, BGEVENT_READ, StoveScript
-	bg_event  1,  1, BGEVENT_READ, SinkScript
-	bg_event  2,  1, BGEVENT_READ, FridgeScript
-	bg_event  4,  1, BGEVENT_READ, TVScript
+	db 0 ; bg events
 
-	db 5 ; object events
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
-	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	db 1 ; object events
+	object_event  1,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
