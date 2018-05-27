@@ -23,14 +23,10 @@ MeetMomLeftScript:
 
 MeetMomRightScript:
 	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM1, 15
-	turnobject PLAYER, LEFT
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iffalse .OnRight
 	applymovement PLAYERSHOUSE1F_MOM1, MovementData_0x7a5fc
 	jump MeetMomScript
 
-.OnRight:
-	applymovement PLAYERSHOUSE1F_MOM1, MovementData_0x7a5fe
 MeetMomScript:
 	opentext
 	writetext UnknownText_0x7a604
@@ -82,15 +78,11 @@ MeetMomScript:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	iffalse .FromLeft
+	iffalse .FromRight
 	jump .Finish
 
 .FromRight:
 	applymovement PLAYERSHOUSE1F_MOM1, MovementData_0x7a600
-	jump .Finish
-
-.FromLeft:
-	applymovement PLAYERSHOUSE1F_MOM1, MovementData_0x7a602
 	jump .Finish
 
 .Finish:
@@ -157,6 +149,12 @@ MomScript:
 
 MovementData_0x7a5fc:
 	turn_head RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
+	turn_head UP
+	slow_step UP
 	step_end
 
 MovementData_0x7a5fe:
@@ -164,7 +162,13 @@ MovementData_0x7a5fe:
 	step_end
 
 MovementData_0x7a600:
-	turn_head LEFT
+	turn_head DOWN
+	slow_step DOWN
+	slow_step LEFT
+	slow_step LEFT
+	slow_step LEFT
+	slow_step LEFT
+	turn_head DOWN
 	step_end
 
 MovementData_0x7a602:
@@ -172,46 +176,57 @@ MovementData_0x7a602:
 	step_end
 
 UnknownText_0x7a604:
-	text "shoutouts to simpleflips"
+	text "shoutouts to"
+	line "simpleflips"
 
 UnknownText_0x7a6bd:
-	text "shoutouts to simpleflips"
+	text "shoutouts to"
+	line "simpleflips"
 	done
 
 UnknownText_0x7a742:
-	text "shoutouts to simpleflips"
+	text "shoutouts to"
+	line "simpleflips"
 	done
 
 UnknownText_0x7a763:
-	text "shoutouts to simpleflips"
+	text "shoutouts to"
+	line "simpleflips"
 	done
 
 UnknownText_0x7a7cb:
-	text "shoutouts to simpleflips"
+	text "shoutouts to"
+	line "simpleflips"
 	done
 
 UnknownText_0x7a807:
-	text "shoutouts to simpleflips"
+	text "shoutouts to"
+	line "simpleflips"
 	done
 
 UnknownText_0x7a850:
-	text "shoutouts to simpleflips"
+	text "shoutouts to"
+	line "simpleflips"
 	done
 
 UnknownText_0x7a8b5:
-	text "shoutouts to simpleflips"
+	text "shoutouts to"
+	line "simpleflips"
 	done
 
 UnknownText_0x7a8e5:
-	text "shoutouts to simpleflips"
+	text "shoutouts to"
+	line "simpleflips"
 	done
 
 UnknownText_0x7a957:
-	text "shoutouts to simpleflips"
+	text "shoutouts to"
+	line "simpleflips"
 	done
 
 NeighborText:
-	text "shoutouts to simpleflips"
+	text "shoutouts to"
+	line "simpleflips"
 	done
 
 PlayersHouse1F_MapEvents:
