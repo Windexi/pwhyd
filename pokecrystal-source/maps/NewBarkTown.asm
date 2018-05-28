@@ -180,7 +180,7 @@ NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  5,  3, ELMS_LAB, 1
+	warp_event  5,  3, ELMS_LAB, 2
 	warp_event 14,  5, PLAYERS_HOUSE_1F, 1
 	warp_event 11, 13, ELMS_HOUSE, 1
 

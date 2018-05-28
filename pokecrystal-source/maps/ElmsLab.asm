@@ -53,6 +53,7 @@ ElmsLab_MapScripts:
 	yesorno
 	iftrue .ElmGetsEmail
 	writetext ElmText_Refused
+	end
 .ElmGetsEmail:
 	writetext ElmText_Accepted
 	buttonsound
@@ -60,6 +61,7 @@ ElmsLab_MapScripts:
 	yesorno
 	iftrue .StealAPokemon
 	writetext ElmText_Refused
+
 .StealAPokemon
 	setscene SCENE_ELMSLAB_CANT_LEAVE
 	closetext
@@ -562,7 +564,7 @@ OakNotes5:
 	jumptext OakNotes5Text
 
 OakNotes6
-	jumptext OakNotes6text
+	jumptext OakNotes6Text
 
 OakNotes1Text:
 	text "OAK'S NOTES"
@@ -661,7 +663,6 @@ ElmsLab_WalkUpToElmMovement:
 	step UP
 	step RIGHT
 	step RIGHT
-	step UP
 	step UP
 	step UP
 	step UP
@@ -791,7 +792,6 @@ ElmText_Intro:
 	para "Ah, so did"
 	line "you come here"
 	cont "for a #MON?"
-
 	done
 
 ElmText_Accepted:
@@ -1359,8 +1359,8 @@ ElmsLab_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  4, 11, NEW_BARK_TOWN, 1
-	warp_event  5, 11, NEW_BARK_TOWN, 1
+	warp_event  0, 11, NEW_BARK_TOWN, 1
+	warp_event  1, 11, NEW_BARK_TOWN, 1
 
 	db 8 ; coord events
 	coord_event  4,  6, SCENE_ELMSLAB_CANT_LEAVE, LabTryToLeaveScript
@@ -1372,7 +1372,7 @@ ElmsLab_MapEvents:
 	coord_event  4,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls1
 	coord_event  5,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls2
 
-	db 10 ; bg events
+	db 16 ; bg events
 	bg_event  2,  1, BGEVENT_READ, ElmsLabHealingMachine
 	bg_event  4,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  5,  7, BGEVENT_READ, ElmsLabBookshelf
@@ -1390,10 +1390,11 @@ ElmsLab_MapEvents:
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
 
-	db 6 ; object events
+	db 4 ; object events
 	object_event  3,  3, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
-	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
-	object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
+	; object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
+	; object_event  5,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CopScript, EVENT_COP_IN_ELMS_LAB
+	; UNCOMMENT THESE TO EDIT LATER
