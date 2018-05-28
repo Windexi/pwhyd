@@ -47,44 +47,27 @@ ElmsLab_MapScripts:
 .WalkUpToElm:
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
-	turnobject ELMSLAB_ELM, RIGHT
 	opentext
 	writetext ElmText_Intro
 .MustSayYes:
 	yesorno
 	iftrue .ElmGetsEmail
 	writetext ElmText_Refused
-	jump .MustSayYes
-
 .ElmGetsEmail:
 	writetext ElmText_Accepted
 	buttonsound
-	writetext ElmText_ResearchAmbitions
-	waitbutton
-	closetext
-	playsound SFX_GLASS_TING
-	pause 30
-	showemote EMOTE_SHOCK, ELMSLAB_ELM, 10
-	turnobject ELMSLAB_ELM, DOWN
-	opentext
-	writetext ElmText_GotAnEmail
-	waitbutton
-	closetext
-	opentext
-	turnobject ELMSLAB_ELM, RIGHT
-	writetext ElmText_MissionFromMrPokemon
-	waitbutton
-	closetext
-	applymovement ELMSLAB_ELM, ElmsLab_ElmToDefaultPositionMovement1
-	turnobject PLAYER, UP
-	applymovement ELMSLAB_ELM, ElmsLab_ElmToDefaultPositionMovement2
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext ElmText_ChooseAPokemon
-	waitbutton
+	writetext KnockOut
+	yesorno
+	iftrue .StealAPokemon
+	writetext ElmText_Refused
+.StealAPokemon
 	setscene SCENE_ELMSLAB_CANT_LEAVE
 	closetext
 	end
+
+KnockOut:
+	text "Knock out"
+	line "PROF.OAK?"
 
 ProfElmScript:
 	faceplayer
@@ -563,37 +546,74 @@ CopScript:
 	setscene SCENE_ELMSLAB_NOTHING
 	end
 
-ElmsLabWindow:
-	opentext
-	checkflag ENGINE_FLYPOINT_VIOLET
-	iftrue .Normal
-	checkevent EVENT_ELM_CALLED_ABOUT_STOLEN_POKEMON
-	iftrue .BreakIn
-	jump .Normal
+OakNotes1:
+	jumptext OakNotes1Text
 
-.BreakIn:
-	writetext ElmsLabWindowText2
-	waitbutton
-	closetext
-	end
+OakNotes2:
+	jumptext OakNotes2Text
 
-.Normal:
-	writetext ElmsLabWindowText1
-	waitbutton
-	closetext
-	end
+OakNotes3:
+	jumptext OakNotes3Text
 
-ElmsLabTravelTip1:
-	jumptext ElmsLabTravelTip1Text
+OakNotes4:
+	jumptext OakNotes4Text
 
-ElmsLabTravelTip2:
-	jumptext ElmsLabTravelTip2Text
+OakNotes5:
+	jumptext OakNotes5Text
 
-ElmsLabTravelTip3:
-	jumptext ElmsLabTravelTip3Text
+OakNotes6
+	jumptext OakNotes6text
 
-ElmsLabTravelTip4:
-	jumptext ElmsLabTravelTip4Text
+OakNotes1Text:
+	text "OAK'S NOTES"
+	
+	para "TAKE YOUR PILLS!"
+	done
+
+OakNotes2Text:
+	text "OAK'S NOTES"
+
+	para "READ YOUR NOTES!"
+	done
+
+OakNotes3Text:
+	text "OAK'S NOTES"
+
+	para "Hello there!"
+	para "Welcome to the"
+	line "world of #MON!"
+	para "My name is OAK!"
+	para "People call me"
+	line "the #MON PROF!"
+	para "..."
+	para "...This goes on"
+	line "for quite some"
+	cont "time."
+	done
+
+OakNotes4Text:
+	text "OAK'S NOTES"
+
+	para "FGDFSDAFFCC"
+
+	para "..."
+	para "...What?!"
+	done
+
+OakNotes5Text:
+	text "OAK's fdfcz"
+	
+	para "This note is"
+	line "barely"
+	cont "ledgible."
+	done
+
+OakNotes6Text:
+	text "OAK'S NOTES!"
+
+	para "Don't talk to"
+	line "the TEACHER!!!"
+	done
 
 ElmsLabTrashcan:
 	jumptext ElmsLabTrashcanText
@@ -605,18 +625,46 @@ ElmsLabTrashcan2:
 ; unused
 	jumpstd trashcan
 
+UhOhBookshelf:
+	jumptext UhOhBookshelfText
+
 ElmsLabBookshelf:
-	jumpstd difficultbookshelf
+	jumptext ElmsLabBookshelfText
+
+ElmsLabBookshelfText:
+	text "It's full of old"
+	line "#MON books!"
+
+	para "A lot of these"
+	line "haven't been"
+	cont "opened in"
+	cont "years..."
+	done
+
+UhOhBookshelfText:
+	text "..."
+
+	para "What the"
+	line "hell?!"
+
+	para "It's full of"
+	line "hentai and"
+	cont "erotica!"
+
+	para "Naughty"
+	line "PROF.OAK!"
+	done
 
 ElmsLab_WalkUpToElmMovement:
 	step UP
 	step UP
 	step UP
+	step RIGHT
+	step RIGHT
 	step UP
 	step UP
 	step UP
 	step UP
-	turn_head LEFT
 	step_end
 
 ElmsLab_CantLeaveMovement:
@@ -724,54 +772,49 @@ AfterChikoritaMovement:
 	step_end
 
 ElmText_Intro:
-	text "ELM: <PLAY_G>!"
-	line "There you are!"
+	text "How did you get"
+	line "in here?"
+	
+	para "Do I know you?"
 
-	para "I needed to ask"
-	line "you a favor."
+	para "My memory hasn't"
+	line "been the best"
+	cont "lately."
 
-	para "I'm conducting new"
-	line "#MON research"
+	para "I'm a #MON"
+	line "PROF!"
 
-	para "right now. I was"
-	line "wondering if you"
+	para "I'm the BEST"
+	line "#MON PROF"
+	cont "there is!"
 
-	para "could help me with"
-	line "it, <PLAY_G>."
+	para "Ah, so did"
+	line "you come here"
+	cont "for a #MON?"
 
-	para "You see…"
-
-	para "I'm writing a"
-	line "paper that I want"
-
-	para "to present at a"
-	line "conference."
-
-	para "But there are some"
-	line "things I don't"
-
-	para "quite understand"
-	line "yet."
-
-	para "So!"
-
-	para "I'd like you to"
-	line "raise a #MON"
-
-	para "that I recently"
-	line "caught."
 	done
 
 ElmText_Accepted:
-	text "Thanks, <PLAY_G>!"
+	text "Well, you can't"
+	line "have one!"
 
-	para "You're a great"
-	line "help!"
+	para "Those are MY"
+	line "cherished #MON!"
+
+	para "You hear me?!"
+
+	para "They're all mine!"
+
+	para "Get off my"
+	line "property!"
 	done
 
 ElmText_Refused:
-	text "But… Please, I"
-	line "need your help!"
+	text "Well, you're"
+	line "trespassing on"
+	cont "private property!"
+
+	para "Leave!"
 	done
 
 ElmText_ResearchAmbitions:
@@ -1298,74 +1341,18 @@ ElmsLabOfficerText2:
 	line "my investigation!"
 	done
 
-ElmsLabWindowText1:
-	text "The window's open."
-
-	para "A pleasant breeze"
-	line "is blowing in."
-	done
-
-ElmsLabWindowText2:
-	text "He broke in"
-	line "through here!"
-	done
-
-ElmsLabTravelTip1Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 1:"
-
-	para "Press START to"
-	line "open the MENU."
-	done
-
-ElmsLabTravelTip2Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 2:"
-
-	para "Record your trip"
-	line "with SAVE!"
-	done
-
-ElmsLabTravelTip3Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 3:"
-
-	para "Open your PACK and"
-	line "press SELECT to"
-	cont "move items."
-	done
-
-ElmsLabTravelTip4Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 4:"
-
-	para "Check your #MON"
-	line "moves. Press the"
-
-	para "A Button to switch"
-	line "moves."
-	done
-
 ElmsLabTrashcanText:
-	text "The wrapper from"
-	line "the snack PROF.ELM"
-	cont "ate is in there…"
+	text "Full of empty"
+	line "pill containers!"
 	done
 
 ElmsLabPCText:
-	text "OBSERVATIONS ON"
-	line "#MON EVOLUTION"
-
-	para "…It says on the"
-	line "screen…"
+	text "It looks like"
+	line "PROF.OAK opened"
+	para "a blank Word"
+	line "document and"
+	cont "started mashing"
+	cont "on the keys!"
 	done
 
 ElmsLab_MapEvents:
@@ -1385,26 +1372,26 @@ ElmsLab_MapEvents:
 	coord_event  4,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls1
 	coord_event  5,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls2
 
-	db 16 ; bg events
+	db 10 ; bg events
 	bg_event  2,  1, BGEVENT_READ, ElmsLabHealingMachine
-	bg_event  6,  1, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  7,  1, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  8,  1, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  9,  1, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  0,  7, BGEVENT_READ, ElmsLabTravelTip1
-	bg_event  1,  7, BGEVENT_READ, ElmsLabTravelTip2
-	bg_event  2,  7, BGEVENT_READ, ElmsLabTravelTip3
-	bg_event  3,  7, BGEVENT_READ, ElmsLabTravelTip4
+	bg_event  4,  7, BGEVENT_READ, ElmsLabBookshelf
+	bg_event  5,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  6,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  7,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  8,  7, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  9,  7, BGEVENT_READ, ElmsLabBookshelf
+	bg_event  9,  7, BGEVENT_READ, UhOhBookshelf
+	bg_event  4, 11, BGEVENT_READ, ElmsLabBookshelf
+	bg_event  4,  0, BGEVENT_READ, OakNotes1
+	bg_event  5,  0, BGEVENT_READ, OakNotes2
+	bg_event  6,  0, BGEVENT_READ, OakNotes3
+	bg_event  7,  0, BGEVENT_READ, OakNotes4
+	bg_event  8,  0, BGEVENT_READ, OakNotes5
+	bg_event  9,  0, BGEVENT_READ, OakNotes6
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
-	bg_event  5,  0, BGEVENT_READ, ElmsLabWindow
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
 
 	db 6 ; object events
-	object_event  5,  2, SPRITE_ELM, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
+	object_event  3,  3, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
 	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  7,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
