@@ -28,7 +28,6 @@ MeetMomRightScript:
 	jump MeetMomScript
 
 MeetMomScript:
-	opentext
 	buttonsound
 	stringtotext GearName, MEM_BUFFER_1
 	scall PlayersHouse1FReceiveItemStd
