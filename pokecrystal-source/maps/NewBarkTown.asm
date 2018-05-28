@@ -22,53 +22,6 @@ NewBarkTown_MapScripts:
 	clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM
 	return
 
-NewBarkTown_TeacherStopsYouScene1:
-	playmusic MUSIC_MOM
-	turnobject NEWBARKTOWN_TEACHER, LEFT
-	opentext
-	writetext Text_WaitPlayer
-	waitbutton
-	closetext
-	turnobject PLAYER, RIGHT
-	applymovement NEWBARKTOWN_TEACHER, Movement_TeacherRunsToYou1_NBT
-	opentext
-	writetext Text_WhatDoYouThinkYoureDoing
-	waitbutton
-	closetext
-	follow NEWBARKTOWN_TEACHER, PLAYER
-	applymovement NEWBARKTOWN_TEACHER, Movement_TeacherBringsYouBack1_NBT
-	stopfollow
-	opentext
-	writetext Text_ItsDangerousToGoAlone
-	waitbutton
-	closetext
-	special RestartMapMusic
-	end
-
-NewBarkTown_TeacherStopsYouScene2:
-	playmusic MUSIC_MOM
-	turnobject NEWBARKTOWN_TEACHER, LEFT
-	opentext
-	writetext Text_WaitPlayer
-	waitbutton
-	closetext
-	turnobject PLAYER, RIGHT
-	applymovement NEWBARKTOWN_TEACHER, Movement_TeacherRunsToYou2_NBT
-	turnobject PLAYER, UP
-	opentext
-	writetext Text_WhatDoYouThinkYoureDoing
-	waitbutton
-	closetext
-	follow NEWBARKTOWN_TEACHER, PLAYER
-	applymovement NEWBARKTOWN_TEACHER, Movement_TeacherBringsYouBack2_NBT
-	stopfollow
-	opentext
-	writetext Text_ItsDangerousToGoAlone
-	waitbutton
-	closetext
-	special RestartMapMusic
-	end
-
 NewBarkTownTeacherScript:
 	faceplayer
 	opentext
@@ -80,6 +33,7 @@ NewBarkTownTeacherScript:
 	iftrue .MonIsAdorable
 	writetext Text_GearIsImpressive
 	waitbutton
+	playsound SFX_TRANSACTION
 	closetext
 	end
 
@@ -92,6 +46,7 @@ NewBarkTownTeacherScript:
 .TellMomYoureLeaving:
 	writetext Text_TellMomIfLeaving
 	waitbutton
+	playsound SFX_TRANSACTION
 	closetext
 	end
 
@@ -103,27 +58,6 @@ NewBarkTownTeacherScript:
 
 NewBarkTownFisherScript:
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
-
-NewBarkTownSilverScript:
-	opentext
-	writetext NewBarkTownRivalText1
-	waitbutton
-	closetext
-	turnobject NEWBARKTOWN_SILVER, LEFT
-	opentext
-	writetext NewBarkTownRivalText2
-	waitbutton
-	closetext
-	follow PLAYER, NEWBARKTOWN_SILVER
-	applymovement PLAYER, Movement_SilverPushesYouAway_NBT
-	stopfollow
-	pause 5
-	turnobject NEWBARKTOWN_SILVER, DOWN
-	pause 5
-	playsound SFX_TACKLE
-	applymovement PLAYER, Movement_SilverShovesYouOut_NBT
-	applymovement NEWBARKTOWN_SILVER, Movement_SilverReturnsToTheShadows_NBT
-	end
 
 NewBarkTownSign:
 	jumptext NewBarkTownSignText
@@ -140,8 +74,8 @@ NewBarkTownElmsHouseSign:
 NewBarkTownStinkyCave:
 	jumptext NewBarkTownStinkyCaveText
 
-NewBarkTownClosedSign:
-	jumptext NewBarkTownClosedSignText
+NewBarkTownResearchSign:
+	jumptext NewBarkTownResearchSignText
 
 Movement_TeacherRunsToYou1_NBT:
 	step LEFT
@@ -176,48 +110,11 @@ Movement_TeacherBringsYouBack2_NBT:
 	turn_head LEFT
 	step_end
 
-Movement_SilverPushesYouAway_NBT:
-	turn_head UP
-	step DOWN
-	step_end
-
-Movement_SilverShovesYouOut_NBT:
-	turn_head UP
-	fix_facing
-	jump_step DOWN
-	remove_fixed_facing
-	step_end
-
-Movement_SilverReturnsToTheShadows_NBT:
-	step RIGHT
-	step_end
-
 Text_GearIsImpressive:
 	text "heheh..."
 
 	para "HELP, SOMEONE!"
 	line "HE RAPE ME!"
-	done
-
-Text_WaitPlayer:
-	text "Wait, <PLAY_G>!"
-	done
-
-Text_WhatDoYouThinkYoureDoing:
-	text "What do you think"
-	line "you're doing?"
-	done
-
-Text_ItsDangerousToGoAlone:
-	text "It's dangerous to"
-	line "go out without a"
-	cont "#MON!"
-
-	para "Wild #MON"
-	line "jump out of the"
-
-	para "grass on the way"
-	line "to the next town."
 	done
 
 Text_YourMonIsAdorable:
@@ -227,37 +124,25 @@ Text_YourMonIsAdorable:
 	done
 
 Text_TellMomIfLeaving:
-	text "Hi, <PLAY_G>!"
-	line "Leaving again?"
+	text "I also get big"
+	line "money if I say"
+	para "someone famous"
+	line "rape me!"
 
-	para "You should tell"
-	line "your mom if you"
-	cont "are leaving."
+	para "HELP! ASH RAPE"
+	line "ME!"
 	done
 
 Text_CallMomOnGear:
-	text "Call your mom on"
-	line "your #GEAR to"
+	text "I get much money"
+	line "if I say he"
+	cont "rape me!"
 
-	para "let her know how"
-	line "you're doing."
+	para "ohoheheheheee!"
 	done
 
 Text_ElmDiscoveredNewMon:
 	text "Go to hell!"
-	done
-
-NewBarkTownRivalText1:
-	text "<……>"
-
-	para "So this is the"
-	line "famous ELM #MON"
-	cont "LAB…"
-	done
-
-NewBarkTownRivalText2:
-	text "…What are you"
-	line "staring at?"
 	done
 
 NewBarkTownSignText:
@@ -286,36 +171,27 @@ NewBarkTownStinkyCaveText:
 	line "venture inside!"
 	done
 
-NewBarkTownClosedSignText:
-	text "TRAINER TIPS"
-	para "Sometimes roads"
-	line "will be closed..."
-	para "...because I"
-	line "hate you!"
-	para "Muhuahaha!"
-	line "  --Windexi"
+NewBarkTownResearchSignText:
+	text "OAK'S 'RESEARCH'"
+	line "LAB"
 	done
 
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
-	warp_event  6,  3, ELMS_LAB, 1
+	db 3 ; warp events
+	warp_event  5,  3, ELMS_LAB, 1
 	warp_event 14,  5, PLAYERS_HOUSE_1F, 1
-	warp_event  3, 11, PLAYERS_NEIGHBORS_HOUSE, 1
 	warp_event 11, 13, ELMS_HOUSE, 1
 
-	db 2 ; coord events
-	coord_event  0,  0, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene1
-	coord_event  0,  0, SCENE_DEFAULT, NewBarkTown_TeacherStopsYouScene2
+	db 0 ; coord events
 
-	db 6 ; bg events
+	db 5 ; bg events
 	bg_event  4, 10, BGEVENT_READ, NewBarkTownSign
 	bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign
 	bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign
 	bg_event 12,  6, BGEVENT_READ, NewBarkTownStinkyCave
-	bg_event 17, 11, BGEVENT_READ, NewBarkTownClosedSign
-	bg_event  0,  0, BGEVENT_READ, NewBarkTownPlayersHouseSign
+	bg_event  6,  4, BGEVENT_READ, NewBarkTownResearchSign
 
 	db 2 ; object events
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
