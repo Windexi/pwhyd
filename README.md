@@ -6,6 +6,7 @@
 ### A worthless pile of garbage no one should play!
 
 A few things:
+- [Progress Reports](https://github.com/Windexi/pwhyd/blob/master/UPDATES.md)
 - [FAQ](https://github.com/Windexi/pwhyd/blob/master/FAQ.md)
 - [Recommended GB/GBC/GBA Emulator](https://mgba.io/)
 - [Discord?](https://github.com/Windexi/pwhyd/blob/master/DISCORD.md)
