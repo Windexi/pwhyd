@@ -54,6 +54,7 @@ ElmsLab_MapScripts:
 	iftrue .ElmGetsEmail
 	writetext ElmText_Refused
 	end
+
 .ElmGetsEmail:
 	writetext ElmText_Accepted
 	buttonsound
@@ -61,6 +62,7 @@ ElmsLab_MapScripts:
 	yesorno
 	iftrue .StealAPokemon
 	writetext ElmText_Refused
+	end
 
 .StealAPokemon
 	setscene SCENE_ELMSLAB_CANT_LEAVE
@@ -72,6 +74,7 @@ ElmsLab_MapScripts:
 KnockOut:
 	text "Knock out"
 	line "PROF.OAK?"
+	done
 
 Ouchie:
 	text "Bonk!"
@@ -85,6 +88,7 @@ Ouchie:
 	para "Time to choose"
 	line "your very first"
 	cont "#MON!"
+	done
 
 ProfElmScript:
 	faceplayer
@@ -232,7 +236,6 @@ ChikoritaPokeBallScript:
 	buttonsound
 	givepoke CHIKORITA, 5, BERRY
 	closetext
-	applymovement PLAYER, AfterChikoritaMovement
 	jump ElmDirectionsScript
 
 DidntChooseStarterScript:
