@@ -21,6 +21,7 @@ ElmsLab_MapScripts:
 .MeetElm:
 	checkevent EVENT_FIRST_MEET_OAK
 	iftrue .WalkUpToElm
+	setscene SCENE_ELMSLAB_NOTHING
 	end
 
 .DummyScene1:
@@ -48,6 +49,10 @@ ElmsLab_MapScripts:
 .WalkUpToElm:
 	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
+	jump InitiateIntro
+	end
+
+InitiateIntro:
 	opentext
 	writetext ElmText_Intro
 .MustSayYes:
@@ -124,6 +129,8 @@ ElmCheckEverstone:
 	end
 
 ElmEggHatchedScript:
+	checkevent EVENT_OAK_PERSIST
+	iftrue InitiateIntro
 	writebyte TOGEPI
 	special FindPartyMonThatSpeciesYourTrainerID
 	iftrue ShowElmTogepiScript
@@ -133,11 +140,15 @@ ElmEggHatchedScript:
 	jump ElmCheckGotEggAgain
 
 ElmCheckTogepiEgg:
+	checkevent EVENT_OAK_PERSIST
+	iftrue InitiateIntro
 	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
 	iffalse ElmCheckGotEggAgain
 	checkevent EVENT_TOGEPI_HATCHED
 	iftrue ElmEggHatchedScript
 ElmCheckGotEggAgain:
+	checkevent EVENT_OAK_PERSIST
+	iftrue InitiateIntro
 	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE ; why are we checking it again?
 	iftrue ElmWaitingEggHatchScript
 	checkflag ENGINE_ZEPHYRBADGE
@@ -152,6 +163,7 @@ ElmCheckGotEggAgain:
 	waitbutton
 	closetext
 	end
+
 
 LabTryToLeaveScript:
 	opentext
