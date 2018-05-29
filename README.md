@@ -11,7 +11,7 @@ A few things:
 - [Recommended GB/GBC/GBA Emulator](https://mgba.io/)
 - [Discord?](https://github.com/Windexi/pwhyd/blob/master/DISCORD.md)
 
-Social:
+Socials:
 - [Twitter](http://twitter.com/windexi)
 - [/u/windexi](http://reddit.com/u/windexi)
 - [/r/PokemonROMHacks](http://reddit.com/r/pokemonROMhacks)
