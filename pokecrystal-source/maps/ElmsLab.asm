@@ -19,7 +19,7 @@ ElmsLab_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .MoveElmCallback
 
 .MeetElm:
-	priorityjump .WalkUpToElm
+	jump .WalkUpToElm
 	end
 
 .DummyScene1:
@@ -245,6 +245,7 @@ DidntChooseStarterScript:
 	end
 
 ElmDirectionsScript:
+	setscene SCENE_ELMSLAB_NOTHING
 	setmapscene NEW_BARK_TOWN, SCENE_FINISHED
 	end
 
