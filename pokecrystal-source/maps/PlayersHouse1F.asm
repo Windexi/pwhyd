@@ -71,6 +71,8 @@ MeetMomScript:
 	writetext UnknownText_0x7a850
 	waitbutton
 	closetext
+	setevent EVENT_ELMS_AIDE_IN_LAB
+	setevent EVENT_FIRST_MEET_OAK
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2

@@ -19,7 +19,8 @@ ElmsLab_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .MoveElmCallback
 
 .MeetElm:
-	jump .WalkUpToElm
+	checkevent EVENT_FIRST_MEET_OAK
+	iftrue .WalkUpToElm
 	end
 
 .DummyScene1:
@@ -53,6 +54,7 @@ ElmsLab_MapScripts:
 	yesorno
 	iftrue .ElmGetsEmail
 	writetext ElmText_Refused
+	clearevent EVENT_FIRST_MEET_OAK
 	end
 
 .ElmGetsEmail:
@@ -62,6 +64,7 @@ ElmsLab_MapScripts:
 	yesorno
 	iftrue .StealAPokemon
 	writetext ElmText_Refused
+	clearevent EVENT_FIRST_MEET_OAK
 	end
 
 .StealAPokemon
@@ -488,7 +491,7 @@ AideScript_ReceiveTheBalls:
 ElmsAideScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
+	checkevent EVENT_OAK_KNOCKED_OUT
 	iftrue AideScript_AfterTheft
 	writetext AideText_AlwaysBusy
 	waitbutton
@@ -511,9 +514,18 @@ AideScript_AfterTheft:
 	writetext AideText_AfterTheft
 	waitbutton
 	closetext
+	checkcode VAR_FACING
+	ifequal RIGHT, MoveWay
 	applymovement ELMSLAB_ELMS_AIDE, AideKnockOutMovement
 	disappear ELMSLAB_ELMS_AIDE
 	setscene SCENE_ELMSLAB_NOTHING
+	clearevent EVENT_ELMS_AIDE_IN_LAB
+	end
+
+MoveWay
+	turn_head UP
+	step UP
+	turn_head DOWN
 	end
 
 MeetCopScript2:
