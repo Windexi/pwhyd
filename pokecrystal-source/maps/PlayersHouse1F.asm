@@ -18,16 +18,14 @@ PlayersHouse1F_MapScripts:
 .DummyScene1:
 	end
 
-MeetMomLeftScript:
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-
 MeetMomRightScript:
 	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM1, 15
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	applymovement PLAYERSHOUSE1F_MOM1, MovementData_0x7a5fc
 	jump MeetMomScript
 
 MeetMomScript:
+	opentext
+	writetext UnknownText_0x7a604
 	buttonsound
 	stringtotext GearName, MEM_BUFFER_1
 	scall PlayersHouse1FReceiveItemStd
@@ -71,7 +69,6 @@ MeetMomScript:
 	writetext UnknownText_0x7a850
 	waitbutton
 	closetext
-	setevent EVENT_FIRST_MEET_OAK
 	setevent EVENT_OAK_PERSIST
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
@@ -145,12 +142,12 @@ MomScript:
 
 MovementData_0x7a5fc:
 	turn_head RIGHT
-	slow_step RIGHT
-	slow_step RIGHT
-	slow_step RIGHT
-	slow_step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
 	turn_head UP
-	slow_step UP
+	step UP
 	step_end
 
 MovementData_0x7a5fe:
@@ -233,12 +230,10 @@ PlayersHouse1F_MapEvents:
 	warp_event  7,  1, PLAYERS_HOUSE_2F, 1
 
 	db 1 ; coord events
-	coord_event  5,  4, SCENE_DEFAULT, MeetMomLeftScript
+	coord_event  5,  4, SCENE_DEFAULT, MeetMomRightScript
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 1 ; object events
 	object_event  1,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
-	object_event  3,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  7,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  0,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  1,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2

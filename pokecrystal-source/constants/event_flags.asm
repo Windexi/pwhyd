@@ -133,7 +133,6 @@
 
 ; PWHYD ADDED EVENTS
 	const EVENT_OAK_KNOCKED_OUT
-	const EVENT_FIRST_MEET_OAK
 	const EVENT_OAK_PERSIST
 
 ; Johto hidden items

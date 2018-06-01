@@ -7,8 +7,7 @@
 	const ELMSLAB_OFFICER
 
 ElmsLab_MapScripts:
-	db 6 ; scene scripts
-	scene_script .MeetElm ; SCENE_DEFAULT
+	db 5 ; scene scripts
 	scene_script .DummyScene1 ; SCENE_ELMSLAB_CANT_LEAVE
 	scene_script .DummyScene2 ; SCENE_ELMSLAB_NOTHING
 	scene_script .DummyScene3 ; SCENE_ELMSLAB_MEET_OFFICER
@@ -17,12 +16,6 @@ ElmsLab_MapScripts:
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .MoveElmCallback
-
-.MeetElm:
-	checkevent EVENT_FIRST_MEET_OAK
-	iftrue .WalkUpToElm
-	setscene SCENE_ELMSLAB_NOTHING
-	end
 
 .DummyScene1:
 	end
@@ -46,20 +39,19 @@ ElmsLab_MapScripts:
 .Skip:
 	return
 
-.WalkUpToElm:
-	applymovement PLAYER, ElmsLab_WalkUpToElmMovement
-	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
-	jump InitiateIntro
+Thing:
+	teleport_to NEW_BARK_TOWN, 1
 	end
 
 InitiateIntro:
-	opentext
+	teleport_to NEW_BARK_TOWN, 1
+	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
 	writetext ElmText_Intro
 .MustSayYes:
 	yesorno
 	iftrue .ElmGetsEmail
 	writetext ElmText_Refused
-	clearevent EVENT_FIRST_MEET_OAK
+	teleport_to NEW_BARK_TOWN, 1
 	end
 
 .ElmGetsEmail:
@@ -69,7 +61,11 @@ InitiateIntro:
 	yesorno
 	iftrue .StealAPokemon
 	writetext ElmText_Refused
-	clearevent EVENT_FIRST_MEET_OAK
+	clearevent EVENT_OAK_PERSIST
+	checkcode VAR_FACING
+	ifequal LEFT, LeaveTheLabLeft
+	ifequal RIGHT, LeaveTheLabRight
+	jp LeaveTheLab
 	end
 
 .StealAPokemon
@@ -101,6 +97,8 @@ Ouchie:
 ProfElmScript:
 	faceplayer
 	opentext
+	checkevent EVENT_OAK_PERSIST
+	iftrue InitiateIntro
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue ElmCheckMasterBall
 	checkevent EVENT_BEAT_ELITE_FOUR
@@ -164,7 +162,46 @@ ElmCheckGotEggAgain:
 	closetext
 	end
 
+LeaveTheLab:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
 
+LeaveTheLabRight:
+	step DOWN
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+
+LeaveTheLabLeft:
+	step DOWN
+	step RIGHT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step LEFT
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+	
 LabTryToLeaveScript:
 	opentext
 	writetext LabWhereGoingText
@@ -667,17 +704,6 @@ UhOhBookshelfText:
 	para "Naughty"
 	line "PROF.OAK!"
 	done
-
-ElmsLab_WalkUpToElmMovement:
-	step UP
-	step UP
-	step UP
-	step RIGHT
-	step RIGHT
-	step UP
-	step UP
-	step UP
-	step_end
 
 ElmsLab_CantLeaveMovement:
 	step UP
@@ -1296,7 +1322,7 @@ AideText_AlwaysBusy:
 	line "been the best"
 	cont "lately."
 
-	text "We moved him down"
+	para "We moved him down"
 	line "to JOHTO so he"
 	cont "can get better"
 	cont "care."
@@ -1404,7 +1430,7 @@ ElmsLab_MapEvents:
 	coord_event  4,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls1
 	coord_event  5,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls2
 
-	db 16 ; bg events
+	db 17 ; bg events
 	bg_event  2,  1, BGEVENT_READ, ElmsLabHealingMachine
 	bg_event  4,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  5,  7, BGEVENT_READ, ElmsLabBookshelf
@@ -1421,6 +1447,7 @@ ElmsLab_MapEvents:
 	bg_event  9,  0, BGEVENT_READ, OakNotes6
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
+	; bg_event  3, 11, BGEVENT_READ, Thing ; DEBUG EVENT
 
 	db 5 ; object events
 	object_event  3,  3, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
