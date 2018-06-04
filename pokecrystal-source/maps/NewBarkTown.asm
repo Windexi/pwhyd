@@ -32,7 +32,7 @@ NewBarkTownTeacherScript:
 MuchMoney:
 	writetext Text_TellMomIfLeaving
 	waitbutton
-	play SFX_TRANSACTION
+	playsound SFX_TRANSACTION
 	closetext
 	end
 
