@@ -35,6 +35,7 @@ MeetMomScript:
 	setscene SCENE_FINISHED
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
+	setevent EVENT_KNOCKED_OAK_IN_LAB
 	buttonsound
 	special SetDayOfWeek
 .SetDayOfWeek:
