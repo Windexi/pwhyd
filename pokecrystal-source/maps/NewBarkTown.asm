@@ -32,6 +32,7 @@ NewBarkTownTeacherScript:
 MuchMoney:
 	writetext Text_TellMomIfLeaving
 	waitbutton
+	play SFX_TRANSACTION
 	closetext
 	end
 
@@ -122,10 +123,9 @@ Text_YourMonIsAdorable:
 	done
 
 Text_TellMomIfLeaving:
-	text "I also get big"
+	text "I get big"
 	line "money if I say"
-	para "someone famous"
-	line "rape me!"
+	para "someone rape me!"
 
 	para "HELP! ASH RAPE"
 	line "ME!"
