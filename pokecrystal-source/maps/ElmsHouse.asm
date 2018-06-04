@@ -64,9 +64,10 @@ ElmsHouseMacText:
 ElmsHouse_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event  2,  7, NEW_BARK_TOWN, 3
 	warp_event  3,  7, NEW_BARK_TOWN, 3
+	warp_event  6,  0, ELMS_HOUSE_2F, 1
 
 	db 0 ; coord events
 
