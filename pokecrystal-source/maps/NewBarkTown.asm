@@ -4,17 +4,13 @@
 	const NEWBARKTOWN_SILVER
 
 NewBarkTown_MapScripts:
-	db 2 ; scene scripts
+	db 1 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_YOUCANGO << PWHYD ADDED
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .DummyScene0:
-	end
-
-.DummyScene1:
 	end
 
 .FlyPoint:
@@ -25,15 +21,17 @@ NewBarkTown_MapScripts:
 NewBarkTownTeacherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	iftrue .CallMom
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .TellMomYoureLeaving
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .MonIsAdorable
+	checkevent EVENT_NEW_BARK_INTRO_FINISHED
+	iftrue MuchMoney
 	writetext Text_GearIsImpressive
 	waitbutton
 	playsound SFX_TRANSACTION
+	closetext
+	end
+
+MuchMoney:
+	writetext Text_TellMomIfLeaving
+	waitbutton
 	closetext
 	end
 
@@ -60,7 +58,6 @@ NewBarkTownFisherScript:
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
 
 NewBarkTownSign:
-	setscene SCENE_YOUCANGO ; FOR DEBUG
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
@@ -178,6 +175,11 @@ NewBarkTownResearchSignText:
 	done
 
 NotYet:
+	checkevent EVENT_OAK_PERSIST
+	iftrue NotYetTurnBack
+	end
+
+NotYetTurnBack:
 	opentext
 	writetext NotYetText
 	waitbutton
@@ -208,20 +210,9 @@ NewBarkTown_MapEvents:
 	warp_event 14,  5, PLAYERS_HOUSE_1F, 1
 	warp_event 11, 13, ELMS_HOUSE, 1
 
-CheckForOak:
-	checkevent EVENT_OAK_KNOCKED_OUT
-	iftrue AllowExit
-	end
-
-AllowExit:
-	setscene SCENE_YOUCANGO
-	end
-
-	db 4 ; coord events
+	db 2 ; coord events
 	coord_event  1,  8, SCENE_DEFAULT, NotYet
 	coord_event  1,  9, SCENE_DEFAULT, NotYet
-	coord_event  2,  8, SCENE_DEFAULT, CheckForOak
-	coord_event  2,  9, SCENE_DEFAULT, CheckForOak
 
 	db 5 ; bg events
 	bg_event  4, 10, BGEVENT_READ, NewBarkTownSign

@@ -8,7 +8,13 @@ ElmsHouse_MapScripts:
 	db 0 ; callbacks
 
 ElmsWife:
-	jumptextfaceplayer ElmsWifeText
+	faceplayer
+	opentext
+	writetext ElmsWifeText
+	waitbutton
+	closetext
+	warp NEW_BARK_TOWN, 11, 14 
+	end
 
 ElmsSon:
 	jumptextfaceplayer ElmsSonText
@@ -16,82 +22,58 @@ ElmsSon:
 ElmsHousePC:
 	jumptext ElmsHousePCText
 
-ElmsHouseBookshelf:
-	jumpstd difficultbookshelf
+ElmsHouseMac:
+	jumptext ElmsHouseMacText
 
 ElmsWifeText:
-	text "Hi, <PLAY_G>! My"
-	line "husband's always"
+	text "We're rich so we"
+	line "have many radios!"
 
-	para "so busy--I hope"
-	line "he's OK."
+	para "How many radios do"
+	line "you have?"
 
-	para "When he's caught"
-	line "up in his #MON"
+	para "..."
 
-	para "research, he even"
-	line "forgets to eat."
+	para "None?!"
+
+	para "Get out!"
 	done
 
 ElmsSonText:
-	text "My sister is really"
+	text "My sister is super"
 	line "attractive."
 
 	para "You're ugly!"
-	line "You have no chance!"
-	done
 
-ElmsHouseLabFoodText:
-; unused
-	text "There's some food"
-	line "here. It must be"
-	cont "for the LAB."
-	done
-
-ElmsHousePokemonFoodText:
-; unused
-	text "There's some food"
-	line "here. This must be"
-	cont "for #MON."
+	para "You have no chance!"
 	done
 
 ElmsHousePCText:
-	text "#MON. Where do"
-	line "they come from? "
+	text "It's a Mac!"
 
-	para "Where are they"
-	line "going?"
+	para "...ew!"
+	done
 
-	para "Why has no one"
-	line "ever witnessed a"
-	cont "#MON's birth?"
+ElmsHouseMacText:
+	text "It's a Mac!"
 
-	para "I want to know! I"
-	line "will dedicate my"
-
-	para "life to the study"
-	line "of #MON!"
-
-	para "…"
-
-	para "It's a part of"
-	line "PROF.ELM's re-"
-	cont "search papers."
+	para "Someone has been"
+	line "playing ROBLOX!"
 	done
 
 ElmsHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, NEW_BARK_TOWN, 4
-	warp_event  3,  7, NEW_BARK_TOWN, 4
+	warp_event  2,  7, NEW_BARK_TOWN, 3
+	warp_event  3,  7, NEW_BARK_TOWN, 3
 
 	db 0 ; coord events
 
 	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, ElmsHousePC
-	bg_event  6,  1, BGEVENT_READ, ElmsHouseBookshelf
-	bg_event  7,  1, BGEVENT_READ, ElmsHouseBookshelf
+	bg_event  2,  1, BGEVENT_READ, ElmsHousePC
+	bg_event  4,  1, BGEVENT_READ, ElmsHouseMac
 
 	db 2 ; object events
 	object_event  1,  3, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ElmsWife, -1

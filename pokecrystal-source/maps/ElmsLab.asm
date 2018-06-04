@@ -67,6 +67,7 @@ InitiateIntro:
 	setevent EVENT_OAK_KNOCKED_OUT
 	clearevent EVENT_KNOCKED_OAK_IN_LAB
 	setevent EVENT_DEFAULT_OAK_IN_LAB
+	setevent EVENT_NEW_BARK_INTRO_FINISHED
 	disappear ELMSLAB_ELM
 	appear ELMSLAB_LYING_OAK
 	refreshscreen
@@ -1388,7 +1389,7 @@ ElmsLab_MapEvents:
 	bg_event  8,  0, BGEVENT_READ, OakNotes5
 	bg_event  9,  0, BGEVENT_READ, OakNotes6
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
-	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
+	bg_event  1,  5, BGEVENT_DOWN, ElmsLabPC
 
 	db 6 ; object events
 	object_event  3,  3, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, EVENT_DEFAULT_OAK_IN_LAB
