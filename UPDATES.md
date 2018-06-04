@@ -1,5 +1,17 @@
 # Progress Reports!
-## Notices on important development updates.
+## A dedicated page for notices on important development updates.
+
+## June 4th, 2018 // 4:15PM PST
+New Bark Town is complete! The complex scripting in Oak's Lab is finally complete after days of tests, and I am very excited for the future of this project.
+You can now download **Public Test Builds** of the project over at the [dedicated Builds page.](https://github.com/Windexi/pwhyd/blob/master/BUILDS.md)
+Starting this Saturday, development will start to slow down for the Summer, as my volunteer jobs will start full time. I'll submit another update on progress
+before I leave.
+
+Regards, 
+
+~ Windexi
+
+[Go back](https://github.com/Windexi/pwhyd)
 
 ## May 29th, 2018 // 2:42AM PST
 Hello, World! The project has been up for a few days now, and I thought it might be fitting to make a small page for blog entries of the game's development!
