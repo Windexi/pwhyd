@@ -33,8 +33,8 @@ MeetMomScript:
 	setflag ENGINE_PHONE_CARD
 	addcellnum PHONE_MOM
 	setscene SCENE_FINISHED
-	setevent EVENT_PLAYERS_HOUSE_MOM_1
-	clearevent EVENT_PLAYERS_HOUSE_MOM_2
+	clearevent EVENT_PLAYERS_HOUSE_MOM_1
+	setevent EVENT_PLAYERS_HOUSE_MOM_2
 	setevent EVENT_KNOCKED_OAK_IN_LAB
 	buttonsound
 	special SetDayOfWeek
@@ -42,8 +42,6 @@ MeetMomScript:
 	yesorno
 	iffalse .WrongDay
 	special InitialSetDSTFlag
-	yesorno
-	iffalse .SetDayOfWeek
 	jump .DayOfWeekDone
 
 .WrongDay:
@@ -52,8 +50,7 @@ MeetMomScript:
 	iffalse .SetDayOfWeek
 .DayOfWeekDone:
 	writetext UnknownText_0x7a763
-	yesorno
-	iffalse .ExplainPhone
+	waitbutton
 	jump .FinishPhone
 
 .ExplainPhone:
@@ -62,7 +59,6 @@ MeetMomScript:
 	jump .FinishPhone
 
 .FinishPhone:
-	waitbutton
 	closetext
 	setevent EVENT_OAK_PERSIST
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -79,9 +75,6 @@ MeetMomScript:
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
 
-MeetMomTalkedScript:
-	jump MeetMomScript
-
 GearName:
 	db "#GEAR@"
 
@@ -91,17 +84,7 @@ PlayersHouse1FReceiveItemStd:
 
 MomScript:
 	faceplayer
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	checkscene
-	iffalse MeetMomTalkedScript ; SCENE_DEFAULT
-	checkevent EVENT_FIRST_TIME_BANKING_WITH_MOM
-	iftrue .FirstTimeBanking
-	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	iftrue .BankOfMom
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .GaveMysteryEgg
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue .GotAPokemon
+	opentext
 	writetext UnknownText_0x7a8b5
 	waitbutton
 	closetext
@@ -137,12 +120,12 @@ MomScript:
 
 MovementData_0x7a5fc:
 	turn_head RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
+	slow_step RIGHT
 	turn_head UP
-	step UP
+	slow_step UP
 	step_end
 
 MovementData_0x7a5fe:
