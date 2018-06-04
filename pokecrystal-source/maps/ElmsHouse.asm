@@ -45,7 +45,8 @@ ElmsSonText:
 
 	para "You're ugly!"
 
-	para "You have no chance!"
+	para "You have" 
+	line "no chance!"
 	done
 
 ElmsHousePCText:
