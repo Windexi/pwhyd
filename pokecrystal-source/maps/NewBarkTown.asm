@@ -131,14 +131,6 @@ Text_TellMomIfLeaving:
 	line "ME!"
 	done
 
-Text_CallMomOnGear:
-	text "I get much money"
-	line "if I say he"
-	cont "rape me!"
-
-	para "ohoheheheheee!"
-	done
-
 Text_ElmDiscoveredNewMon:
 	text "Go to hell!"
 	done
