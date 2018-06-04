@@ -53,11 +53,6 @@ MeetMomScript:
 	writetext UnknownText_0x7a763
 	yesorno
 	iffalse .ExplainPhone
-	jump .KnowPhone
-
-.KnowPhone:
-	writetext UnknownText_0x7a7cb
-	buttonsound
 	jump .FinishPhone
 
 .ExplainPhone:
@@ -66,7 +61,6 @@ MeetMomScript:
 	jump .FinishPhone
 
 .FinishPhone:
-	writetext UnknownText_0x7a850
 	waitbutton
 	closetext
 	setevent EVENT_OAK_PERSIST
@@ -171,6 +165,7 @@ MovementData_0x7a602:
 UnknownText_0x7a604:
 	text "shoutouts to"
 	line "simpleflips"
+	done
 
 UnknownText_0x7a6bd:
 	text "shoutouts to"

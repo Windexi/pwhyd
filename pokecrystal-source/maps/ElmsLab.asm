@@ -39,19 +39,16 @@ ElmsLab_MapScripts:
 .Skip:
 	return
 
-Thing:
-	teleport_to NEW_BARK_TOWN, 1
-	end
-
 InitiateIntro:
-	teleport_to NEW_BARK_TOWN, 1
 	showemote EMOTE_SHOCK, ELMSLAB_ELM, 15
+	opentext
 	writetext ElmText_Intro
 .MustSayYes:
 	yesorno
 	iftrue .ElmGetsEmail
 	writetext ElmText_Refused
-	teleport_to NEW_BARK_TOWN, 1
+	waitbutton
+	warp NEW_BARK_TOWN, 5, 4
 	end
 
 .ElmGetsEmail:
@@ -61,17 +58,16 @@ InitiateIntro:
 	yesorno
 	iftrue .StealAPokemon
 	writetext ElmText_Refused
-	clearevent EVENT_OAK_PERSIST
-	checkcode VAR_FACING
-	ifequal LEFT, LeaveTheLabLeft
-	ifequal RIGHT, LeaveTheLabRight
-	jp LeaveTheLab
+	waitbutton
+	warp NEW_BARK_TOWN, 5, 4
 	end
 
 .StealAPokemon
 	setscene SCENE_ELMSLAB_CANT_LEAVE
 	setevent EVENT_OAK_KNOCKED_OUT
+	clearevent EVENT_OAK_PERSIST
 	writetext Ouchie
+	waitbutton
 	closetext
 	end
 
@@ -96,18 +92,24 @@ Ouchie:
 
 ProfElmScript:
 	faceplayer
-	opentext
+	checkevent EVENT_OAK_KNOCKED_OUT
+	iftrue HesOutCold
 	checkevent EVENT_OAK_PERSIST
 	iftrue InitiateIntro
 	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
 	iftrue ElmCheckMasterBall
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue ElmGiveTicketScript
+	closetext
+	end
+
 ElmCheckMasterBall:
 	checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
 	iftrue ElmCheckEverstone
 	checkflag ENGINE_RISINGBADGE
 	iftrue ElmGiveMasterBallScript
+	end
+
 ElmCheckEverstone:
 	checkevent EVENT_GOT_EVERSTONE_FROM_ELM
 	iftrue ElmScript_CallYou
@@ -125,6 +127,21 @@ ElmCheckEverstone:
 	waitbutton
 	closetext
 	end
+
+HesOutCold:
+	opentext
+	writetext HesOutColdText
+	waitbutton
+	closetext
+	end
+
+HesOutColdText:
+	text "The old timer is"
+	line "out cold!"
+
+	para "Gee... I hope he's"
+	line "breathing..."
+	done
 
 ElmEggHatchedScript:
 	checkevent EVENT_OAK_PERSIST
@@ -572,6 +589,10 @@ AideScript_AfterTheft:
 	end
 
 MoveWay
+	applymovement PLAYER, MoveWay_Movement
+	end
+
+MoveWay_Movement
 	turn_head UP
 	step UP
 	turn_head DOWN
@@ -1430,7 +1451,7 @@ ElmsLab_MapEvents:
 	coord_event  4,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls1
 	coord_event  5,  8, SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS, AideScript_WalkBalls2
 
-	db 17 ; bg events
+	db 16 ; bg events
 	bg_event  2,  1, BGEVENT_READ, ElmsLabHealingMachine
 	bg_event  4,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  5,  7, BGEVENT_READ, ElmsLabBookshelf
@@ -1447,7 +1468,6 @@ ElmsLab_MapEvents:
 	bg_event  9,  0, BGEVENT_READ, OakNotes6
 	bg_event  9,  3, BGEVENT_READ, ElmsLabTrashcan
 	bg_event  3,  5, BGEVENT_DOWN, ElmsLabPC
-	; bg_event  3, 11, BGEVENT_READ, Thing ; DEBUG EVENT
 
 	db 5 ; object events
 	object_event  3,  3, SPRITE_OAK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
