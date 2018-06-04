@@ -19,11 +19,12 @@ RoomTV:
 	jumptext RoomTVText
 	
 RoomTVText:
-	text "Anime channel!"
+	text "Bill Nye the"
+	line "Science Guy!"
 
 	para "..."
 
-	para "traps are gay"
+	para "Traps are gay."
 	done
 
 RoomBookshelf:
@@ -54,8 +55,9 @@ AdrianBed:
 AdrianBedText:
 	text "It's ADRIAN'S bed!"
 
-	para "I would sleep in it"
-	line "all day if I could!"
+	para "I'd sleep in it"
+	line "all day if" 
+	cont "I could!"
 	done
 
 ElmsHouse2F_MapEvents:
