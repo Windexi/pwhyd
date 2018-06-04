@@ -6,7 +6,7 @@
 NewBarkTown_MapScripts:
 	db 2 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	scene_script .DummyScene1 ; SCENE_YOUCANGO << PWHYD ADDED
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
@@ -60,6 +60,7 @@ NewBarkTownFisherScript:
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
 
 NewBarkTownSign:
+	setscene SCENE_YOUCANGO ; FOR DEBUG
 	jumptext NewBarkTownSignText
 
 NewBarkTownPlayersHouseSign:
@@ -176,6 +177,29 @@ NewBarkTownResearchSignText:
 	line "LAB"
 	done
 
+NotYet:
+	opentext
+	writetext NotYetText
+	waitbutton
+	closetext
+	applymovement PLAYER, NotYetMovement
+	end
+
+NotYetText:
+	text "If I go out"
+	line "there..."
+
+	para "I'll get bullied"
+	line "by the #MON"
+	cont "too!"
+	done
+
+NotYetMovement:
+	turn_head RIGHT
+	step RIGHT
+	turn_head LEFT
+	step_end
+
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
@@ -184,7 +208,20 @@ NewBarkTown_MapEvents:
 	warp_event 14,  5, PLAYERS_HOUSE_1F, 1
 	warp_event 11, 13, ELMS_HOUSE, 1
 
-	db 0 ; coord events
+CheckForOak:
+	checkevent EVENT_OAK_KNOCKED_OUT
+	iftrue AllowExit
+	end
+
+AllowExit:
+	setscene SCENE_YOUCANGO
+	end
+
+	db 4 ; coord events
+	coord_event  1,  8, SCENE_DEFAULT, NotYet
+	coord_event  1,  9, SCENE_DEFAULT, NotYet
+	coord_event  2,  8, SCENE_DEFAULT, CheckForOak
+	coord_event  2,  9, SCENE_DEFAULT, CheckForOak
 
 	db 5 ; bg events
 	bg_event  4, 10, BGEVENT_READ, NewBarkTownSign

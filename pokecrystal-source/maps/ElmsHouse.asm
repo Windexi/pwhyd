@@ -34,13 +34,11 @@ ElmsWifeText:
 	done
 
 ElmsSonText:
-	text "When I grow up,"
-	line "I'm going to help"
-	cont "my dad!"
+	text "My sister is really"
+	line "attractive."
 
-	para "I'm going to be a"
-	line "great #MON"
-	cont "professor!"
+	para "You're ugly!"
+	line "You have no chance!"
 	done
 
 ElmsHouseLabFoodText:
@@ -96,5 +94,5 @@ ElmsHouse_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, ElmsHouseBookshelf
 
 	db 2 ; object events
-	object_event  1,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ElmsWife, -1
-	object_event  5,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ElmsSon, -1
+	object_event  1,  3, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ElmsWife, -1
+	object_event  5,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ElmsSon, -1
