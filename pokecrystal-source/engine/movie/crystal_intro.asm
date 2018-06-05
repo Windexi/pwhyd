@@ -166,8 +166,8 @@ PlaceGameFreakPresents_1: ; e468d
 ; e46af
 
 .GAME_FREAK:
-	;  G  A  M  E   _  F  R  E  A  K
-	db 0, 1, 2, 3, 13, 4, 5, 3, 1, 6
+	;  _   _   W  I  N  D  E  X  I  << PWHYD MODIFIED
+	db 13, 13, 0, 1, 2, 3, 4, 5, 6
 .end
 	db "@"
 ; e46ba
