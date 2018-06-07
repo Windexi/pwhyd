@@ -1857,3 +1857,10 @@ UnknownText_0x1be06a::
 	text "Presto! All done."
 	line "Come again, OK?"
 	done
+
+UseAnotherRepelText::
+	text "REPEL's effect"
+	line "wore off."
+
+	para "Use another?"
+	done
