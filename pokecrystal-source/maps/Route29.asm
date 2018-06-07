@@ -17,7 +17,7 @@ Route29Sign2:
 	jumptext Route29Sign2Text
 
 Route29HiddenItem:
-	itemball POKEBALL
+	hiddenitem RARE_CANDY, EVENT_ROUTE29_HIDDEN_ITEM
 
 MrLetsBeFriends:
 	faceplayer
@@ -26,7 +26,7 @@ MrLetsBeFriends:
 	waitbutton
 	closetext
 	applymovement MR_LETS_BE_FRIENDS, MrLetsBeFriendsMovement
-	dissapear MR_LETS_BE_FRIENDS
+	disappear MR_LETS_BE_FRIENDS
 	setevent EVENT_LETS_BE_FRIENDS
 	end
 
@@ -98,12 +98,11 @@ Route29_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event 51,  7, BGEVENT_READ, Route29Sign1
 	bg_event  3,  5, BGEVENT_READ, Route29Sign2
+	bg_event 53,  2, BGEVENT_ITEM, Route29HiddenItem
 
-	db 3 ; object events
+	db 2 ; object events
 	object_event 12,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29FruitTree, -1
-	object_event 25,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, 0, OBJECTTYPE_SCRIPT, 0, MrLetsBeFriends, EVENT_LETS_BE_FRIENDS
-	object_event 53,  2, SPRITE_NONE, SPRITEMOVEDATA_STILL, 0, 0, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29HiddenItem, -1
-
+	object_event 25,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrLetsBeFriends, EVENT_LETS_BE_FRIENDS
