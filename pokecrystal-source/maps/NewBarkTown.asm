@@ -1,7 +1,6 @@
 	const_def 2 ; object constants
 	const NEWBARKTOWN_TEACHER
 	const NEWBARKTOWN_FISHER
-	const NEWBARKTOWN_SILVER
 
 NewBarkTown_MapScripts:
 	db 1 ; scene scripts
@@ -119,7 +118,7 @@ Text_YourMonIsAdorable:
 Text_TellMomIfLeaving:
 	text "I get big"
 	line "money if I say"
-	para "someone rape me!"
+	cont "someone rape me!"
 
 	para "HELP! ASH RAPE"
 	line "ME!"

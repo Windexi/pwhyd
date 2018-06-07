@@ -151,7 +151,18 @@ UnknownText_0x1bc288::
 	text "CARD FOLDER open.@@"
 
 UnknownText_0x1bc29c::
-	text "<……><……><……><……><……><……>"
+	text "DISCLAIMER"
+
+	para "This is a fanmade"
+	line "game and is in no"
+	cont "way produced by"
+	cont "GAMEFREAK/Nintendo"
+
+	para "With that said,"
+	line "please enjoy."
+	cont "      -- Windexi"
+
+	para "<……><……><……><……><……><……>"
 	line "<……><……><……><……><……><……>"
 
 	para "Zzz… Hm? Wha…?"
@@ -162,7 +173,7 @@ UnknownText_0x1bc29c::
 	prompt
 
 UnknownText_0x1bc2eb::
-	text "What time is it?"
+	text "Set the time."
 	done
 
 UnknownText_0x1bc2fd::
@@ -177,7 +188,7 @@ UnknownText_0x1bc308::
 	done
 
 UnknownText_0x1bc31b::
-	text "Whoa!@@"
+	text "Is this correct?"
 
 UnknownText_0x1bc323::
 	text "?"
@@ -201,7 +212,7 @@ UnknownText_0x1bc34f::
 	done
 
 UnknownText_0x1bc369::
-	text "What day is it?"
+	text "Set the day."
 	done
 
 UnknownText_0x1bc37a::
