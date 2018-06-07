@@ -1,7 +1,6 @@
 	const_def 2 ; object constants
 	const ROUTE29_FRUIT_TREE
 	const MR_LETS_BE_FRIENDS
-	const ROUTE29_HIDDEN
 
 Route29_MapScripts:
 	db 1 ; scene scripts

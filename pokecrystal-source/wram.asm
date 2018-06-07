@@ -2814,6 +2814,8 @@ wUnownDex:: ds NUM_UNOWN ; ded9
 wUnlockedUnowns:: db ; def3
 wFirstUnownSeen:: db
 
+wFirstMagikarpSeen:: ds 1
+
 wDayCareMan:: ; def5
 ; bit 7: active
 ; bit 6: egg ready

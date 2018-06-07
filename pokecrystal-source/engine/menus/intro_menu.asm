@@ -678,7 +678,7 @@ OakSpeech: ; 0x5f99
 
 	call RotateFourPalettesRight
 	call RotateThreePalettesRight
-	; jp Debug ; USED TO SKIP INTRO FOR DEBUGGING. COMMENT OUT TO PLAY INTRO!
+	jp Debug ; USED TO SKIP INTRO FOR DEBUGGING. COMMENT OUT TO PLAY INTRO!
 	xor a
 	ld [wCurPartySpecies], a
 	ld a, POKEMON_PROF

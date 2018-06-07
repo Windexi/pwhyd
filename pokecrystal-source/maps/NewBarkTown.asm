@@ -69,39 +69,6 @@ NewBarkTownStinkyCave:
 NewBarkTownResearchSign:
 	jumptext NewBarkTownResearchSignText
 
-Movement_TeacherRunsToYou1_NBT:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step_end
-
-Movement_TeacherRunsToYou2_NBT:
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	step LEFT
-	turn_head DOWN
-	step_end
-
-Movement_TeacherBringsYouBack1_NBT:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	turn_head LEFT
-	step_end
-
-Movement_TeacherBringsYouBack2_NBT:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	turn_head LEFT
-	step_end
-
 Text_GearIsImpressive:
 	text "heheh..."
 
@@ -184,7 +151,6 @@ NotYetText:
 NotYetMovement:
 	turn_head RIGHT
 	step RIGHT
-	turn_head LEFT
 	step_end
 
 NewBarkTown_MapEvents:
