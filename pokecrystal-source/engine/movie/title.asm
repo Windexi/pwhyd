@@ -80,10 +80,10 @@ _TitleScreen: ; 10ed67
 
 
 ; 'CRYSTAL VERSION'
-	hlbgcoord 5, 9
-	ld bc, NAME_LENGTH ; length of version text
-	ld a, 1
-	call ByteFill
+;	hlbgcoord 5, 9
+;	ld bc, NAME_LENGTH ; length of version text
+;	ld a, 1
+;	call ByteFill
 
 ; Suicune gfx
 	hlbgcoord 0, 12
