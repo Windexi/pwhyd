@@ -35,7 +35,7 @@ MeetMomScript:
 	setscene SCENE_FINISHED
 	clearevent EVENT_PLAYERS_HOUSE_MOM_1
 	setevent EVENT_PLAYERS_HOUSE_MOM_2
-	setevent EVENT_KNOCKED_OAK_IN_LAB
+	; setevent EVENT_KNOCKED_OAK_IN_LAB
 	buttonsound
 	special SetDayOfWeek
 .SetDayOfWeek:
@@ -60,7 +60,7 @@ MeetMomScript:
 
 .FinishPhone:
 	closetext
-	setevent EVENT_OAK_PERSIST
+	; setevent EVENT_OAK_PERSIST
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2

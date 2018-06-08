@@ -170,7 +170,9 @@ Debug:
 	addcellnum PHONE_OAK
 	addcellnum PHONE_BILL
 	; you can leave New Bark Town
-	setevent EVENT_KNOCKED_OAK_IN_LAB
+	setevent EVENT_OAK_KNOCKED_OUT
+	clearevent EVENT_KNOCKED_OAK_IN_LAB
+	setevent EVENT_DEFAULT_OAK_IN_LAB
 	setevent EVENT_NEW_BARK_INTRO_FINISHED
 	closetext
 	end
