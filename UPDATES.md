@@ -1,6 +1,13 @@
 # Progress Reports!
 ## A dedicated page for notices on important development updates.
 
+## June 9th, 2018 // 12:43AM PST
+Hello everyone. I have made some significant progress on Route 29 and some titlescreen FX for the project, but the time has come, and this will most likely be my last update for a while. Early in the morning, I will set off to start my volunteer jobs for the Summer, and development will most likely come halt for a bit.
+
+Bye for now, I should get some rest.
+
+~ Windexi
+
 ## June 4th, 2018 // 4:15PM PST
 New Bark Town is complete! The complex scripting in Oak's Lab has been finished after days of tests, and I am very excited for the future of this project.
 You can now download **Public Test Builds** of the project over at the [dedicated Builds page.](https://github.com/Windexi/pwhyd/blob/master/BUILDS.md)
