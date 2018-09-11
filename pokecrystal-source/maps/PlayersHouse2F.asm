@@ -201,7 +201,7 @@ PlayersHouse2F_MapEvents:
 
 	db 1 ; bg events
 	bg_event  3,  2, BGEVENT_READ, PlayersHouseMrPlant
-	; bg_event  7,  5, BGEVENT_READ, DebugBall
+	; bg_event  7,  5, BGEVENT_READ, DebugBall  << I forgot why I put this here. Ignore.
 
 	db 1 ; object events
 	object_event  7,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DebugBall, EVENT_DEBUG_BALL

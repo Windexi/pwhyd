@@ -3,14 +3,10 @@
 	const MR_LETS_BE_FRIENDS
 
 Route29_MapScripts:
-	db 2 ; scene scripts
+	db 1 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_ROUTE29_NOTHING
-	scene_script .DummyScene1 ; NOTHING?
 
 .DummyScene0:
-	end
-
-.DummyScene1:
 	end
 
 Route29Sign1:
