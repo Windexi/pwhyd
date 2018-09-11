@@ -1,4 +1,4 @@
-	const_def 6 ; object constants
+	const_def 2 ; object constants
 	const ELMSLAB_ELM
 	const ELMSLAB_LYING_OAK
 	const ELMSLAB_POKE_BALL1

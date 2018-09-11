@@ -60,7 +60,7 @@ MeetMomScript:
 
 .FinishPhone:
 	closetext
-	; setevent EVENT_OAK_PERSIST
+	setevent EVENT_OAK_PERSIST
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FromRight
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
