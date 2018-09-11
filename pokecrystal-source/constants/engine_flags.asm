@@ -1,8 +1,5 @@
 ; EngineFlags indexes (see engine/engine_flags.asm)
 	const_def
-
-	const ENGINE_VS_SEEKER
-
 ; wPokegearFlags
 	const ENGINE_RADIO_CARD
 	const ENGINE_MAP_CARD

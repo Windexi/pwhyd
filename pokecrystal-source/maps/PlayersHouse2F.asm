@@ -45,6 +45,7 @@ MrPlantText:
 	para "My only friend!"
 	done
 
+<<<<<<< HEAD
 DebugBall:
 	opentext
 	writetext DebugBallText
@@ -191,6 +192,8 @@ FillPokedex:
 	ld [hl], a ; 249-253
 	ret
 
+=======
+>>>>>>> parent of 937e25a... Added the DEBUG BALL!
 PlayersHouse2F_MapEvents:
 	db 0, 0 ; filler
 
@@ -201,7 +204,9 @@ PlayersHouse2F_MapEvents:
 
 	db 1 ; bg events
 	bg_event  3,  2, BGEVENT_READ, PlayersHouseMrPlant
+<<<<<<< HEAD
 	; bg_event  7,  5, BGEVENT_READ, DebugBall  << I forgot why I put this here. Ignore.
+=======
+>>>>>>> parent of 937e25a... Added the DEBUG BALL!
 
-	db 1 ; object events
-	object_event  7,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DebugBall, EVENT_DEBUG_BALL
+	db 0 ; object events
