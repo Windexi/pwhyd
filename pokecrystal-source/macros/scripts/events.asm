@@ -289,24 +289,26 @@ checkpoke: MACRO
 	db \1 ; pkmn
 ENDM
 
-	enum givepoke_command ; $2d
-givepoke: MACRO
-if _NARG == 2
-	givepoke \1, \2, NO_ITEM, FALSE
-elif _NARG == 3
-	givepoke \1, \2, \3, FALSE
-else
+	enum givepoke_command
+givepoke: macro
 	db givepoke_command
 	db \1 ; pokemon
 	db \2 ; level
+	if _NARG >= 3
 	db \3 ; item
+	if _NARG >= 4
 	db \4 ; trainer
-if \4
+	if \4
 	dw \5 ; trainer_name_pointer
 	dw \6 ; pkmn_nickname
-endc
-endc
-ENDM
+	endc
+	else
+	db 0
+	endc
+	else
+	db 0, 0
+	endc
+	endm
 
 	enum giveegg_command ; $2e
 giveegg: MACRO
@@ -530,6 +532,18 @@ jumptextfaceplayer: MACRO
 	db jumptextfaceplayer_command
 	dw \1 ; text_pointer
 ENDM
+
+	enum givetmhm_command ; PWHYD ADDED
+givetmhm: macro
+	db givetmhm_command
+	db \1 ; tmhm
+	endm
+
+	enum checktmhm_command ; PWHYD ADDED
+checktmhm: macro
+	db checktmhm_command
+	db \1 ; tmhm
+	endm
 
 ; if _CRYSTAL
 	enum farjumptext_command ; $52

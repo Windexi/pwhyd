@@ -147,6 +147,8 @@ ScriptCommandTable:
 	dw Script_loadmenu                   ; 4f
 	dw Script_closewindow                ; 50
 	dw Script_jumptextfaceplayer         ; 51
+	dw Script_givetmhm					 ; << PWHYD ADDED
+	dw Script_checktmhm					 ; << PWHYD ADDED
 if _CRYSTAL
 	dw Script_farjumptext                ; 52
 endc
@@ -308,6 +310,35 @@ Script_jumptextfaceplayer:
 	ld b, BANK(JumpTextFacePlayerScript)
 	ld hl, JumpTextFacePlayerScript
 	jp ScriptJump
+
+Script_givetmhm:
+; PWHYD ADDED
+
+	call GetScriptByte
+	ld [CurTMHM], a
+	ld [wItemQuantityChangeBuffer], a
+	call ReceiveTMHM
+	jr nc, .full
+	ld a, TRUE
+	ld [ScriptVar], a
+	ret
+.full
+	xor a
+	ld [ScriptVar], a
+	ret	
+
+Script_checktmhm:
+; PWHYD ADDED
+
+	xor a
+	ld [ScriptVar], a
+	call GetScriptByte
+	ld [CurTMHM], a
+	call CheckTMHM
+	ret nc
+	ld a, TRUE
+	ld [ScriptVar], a
+	ret
 
 Script_jumptext:
 ; script command 0x53
