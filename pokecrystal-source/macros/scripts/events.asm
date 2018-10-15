@@ -534,16 +534,16 @@ jumptextfaceplayer: MACRO
 ENDM
 
 	enum givetmhm_command ; PWHYD ADDED
-givetmhm: macro
-	db givetmhm_command
-	db \1 ; tmhm
-	endm
+;givetmhm: macro
+;	db givetmhm_command
+;	db \1 ; tmhm
+;	endm
 
-	enum checktmhm_command ; PWHYD ADDED
-checktmhm: macro
-	db checktmhm_command
-	db \1 ; tmhm
-	endm
+;	enum checktmhm_command ; PWHYD ADDED
+;checktmhm: macro
+;	db checktmhm_command
+;	db \1 ; tmhm
+;	endm
 
 ; if _CRYSTAL
 	enum farjumptext_command ; $52
