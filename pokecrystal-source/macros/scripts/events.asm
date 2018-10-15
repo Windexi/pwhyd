@@ -531,7 +531,6 @@ jumptextfaceplayer: MACRO
 	dw \1 ; text_pointer
 ENDM
 
-<<<<<<< HEAD
 	enum givetmhm_command ; PWHYD ADDED
 ;givetmhm: macro
 ;	db givetmhm_command
@@ -544,8 +543,6 @@ ENDM
 ;	db \1 ; tmhm
 ;	endm
 
-=======
->>>>>>> parent of 3e95d5d... First changes for Debug Script v2. Not compiling atm.
 ; if _CRYSTAL
 	enum farjumptext_command ; $52
 farjumptext: MACRO
