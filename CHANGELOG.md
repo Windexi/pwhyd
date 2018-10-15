@@ -10,5 +10,6 @@
 - Oak introduction completed.
 - You can only be a boy. Take that, feminists.
 - Player name options changed to BENNY.
+- A few other surprises ;)
 
 [Go back](https://github.com/Windexi/pwhyd/blob/master/BUILDS.md)

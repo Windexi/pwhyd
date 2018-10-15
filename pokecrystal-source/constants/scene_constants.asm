@@ -34,6 +34,11 @@ SCENE_FINISHED EQU 1
 	const_def 1
 	const SCENE_LANCESROOM_APPROACH_LANCE ; 1
 
+; wNewBarkTownSceneID << PWHYD ADDED
+;	const_def 1
+;	const SCENE_NOTHING
+;	const SCENE_YOUCANGO
+
 ; wElmsLabSceneID
 	const_def 1
 	const SCENE_ELMSLAB_CANT_LEAVE            ; 1
