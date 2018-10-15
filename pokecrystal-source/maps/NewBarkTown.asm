@@ -5,19 +5,12 @@
 NewBarkTown_MapScripts:
 	db 1 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_DEFAULT
-;	scene_script .DummyScene1 ; SCENE_YOUCANGO
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
 .DummyScene0:
-;	checkevent EVENT_OAK_PERSIST
-;	iftrue .DummyScene1
-;	setscene SCENE_YOUCANGO
 	end
-
-;.DummyScene1:
-;	end
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_NEW_BARK
@@ -166,18 +159,18 @@ NewBarkTownResearchSignText:
 	line "LAB"
 	done
 
-NotYet:
-	checkevent EVENT_OAK_PERSIST
-	iftrue NotYetTurnBack
-	end
+;NotYet:  ; comment out for debug
+;	checkevent EVENT_OAK_PERSIST
+;	iftrue NotYetTurnBack
+;	end
 
-NotYetTurnBack:
-	opentext
-	writetext NotYetText
-	waitbutton
-	closetext
-	applymovement PLAYER, NotYetMovement
-	end
+;NotYetTurnBack:
+;	opentext
+;	writetext NotYetText
+;	waitbutton
+;	closetext
+;	applymovement PLAYER, NotYetMovement
+;	end
 
 NotYetText:
 	text "If I go out"
@@ -193,14 +186,14 @@ NotYetMovement:
 	step RIGHT
 	step_end
 
-;DebugScript:
+DebugScript:
 ;	setevent EVENT_OAK_KNOCKED_OUT
 ;	clearevent EVENT_KNOCKED_OAK_IN_LAB
 ;	setevent EVENT_DEFAULT_OAK_IN_LAB
 ;	setevent EVENT_NEW_BARK_INTRO_FINISHED
 ;	clearevent EVENT_OAK_PERSIST
-;	givepoke MEW, 80
-;	end
+	givepoke MEW, 80
+	end
 
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
@@ -210,17 +203,17 @@ NewBarkTown_MapEvents:
 	warp_event 14,  5, PLAYERS_HOUSE_1F, 1
 	warp_event 11, 13, ELMS_HOUSE, 1
 
-	db 2 ; coord events
-	coord_event  1,  8, SCENE_DEFAULT, NotYet
-	coord_event  1,  9, SCENE_DEFAULT, NotYet
+	db 0 ; coord events
+;	coord_event  1,  8, SCENE_DEFAULT, NotYet
+;	coord_event  1,  9, SCENE_DEFAULT, NotYet
 
-	db 5 ; bg events
+	db 6 ; bg events
 	bg_event  4, 10, BGEVENT_READ, NewBarkTownSign
 	bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign
 	bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign
 	bg_event 12,  6, BGEVENT_READ, NewBarkTownStinkyCave
 	bg_event  6,  4, BGEVENT_READ, NewBarkTownResearchSign
-;	bg_event  2, 14, BGEVENT_READ, DebugScript
+	bg_event  2, 14, BGEVENT_READ, DebugScript
 
 	db 2 ; object events
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1

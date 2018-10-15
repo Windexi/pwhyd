@@ -1,17 +1,12 @@
 	const_def 2 ; object constants
 	const ROUTE29_FRUIT_TREE
 	const MR_LETS_BE_FRIENDS
-;	const ROUTE29_HIDDEN
 
 Route29_MapScripts:
 	db 1 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_ROUTE29_NOTHING
-	scene_script .DummyScene1
 
 .DummyScene0:
-	end
-
-.DummyScene1:
 	end
 
 Route29Sign1:
@@ -19,9 +14,6 @@ Route29Sign1:
 
 Route29Sign2:
 	jumptext Route29Sign2Text
-
-;Route29HiddenItem:
-;	hiddenitem RARE_CANDY, EVENT_ROUTE29_HIDDEN_ITEM
 
 MrLetsBeFriends:
 	faceplayer
@@ -105,8 +97,7 @@ Route29_MapEvents:
 	db 2 ; bg events
 	bg_event 51,  7, BGEVENT_READ, Route29Sign1
 	bg_event  3,  5, BGEVENT_READ, Route29Sign2
-;	bg_event 53,  2, BGEVENT_ITEM, Route29HiddenItem
 
 	db 2 ; object events
-	object_event 12,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29FruitTree, -1
+	object_event 12,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29FruitTree, -1
 	object_event 25,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrLetsBeFriends, EVENT_LETS_BE_FRIENDS
