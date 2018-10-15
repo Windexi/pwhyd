@@ -1495,48 +1495,39 @@ _OakText1::
 	text "..."
 	line ".....hng?"
 
-	para "Who's there?!"
-	line "Stop!"
-	para "I'm warning you!"
+	para "Who dhere?!"
+	line "No!"
+	para "Nging Nging!"
 
-	para "Don't come closer!"
+	para "Ppplabbbth!"
 
-	para "Ow... my head..."
-	line "Where are my meds?"
+	para "Brrrrrrr!"
+	line "Mmmmmmmsafannn."
 	prompt
 
 _OakText2::
-	text "Ah fuck."
-	line "Here we go."
-	para "Pop that shit.@@"
+	text "POKéMON POKéMON!"
+	line "POKé BIG!@@"
+	para "POKé SMALL! YES!"
 
 _OakText3::
 	text_waitbutton
 	db "@@"
 
 _OakText4::
-	text "That's better..."
-	line "but things are"
-	para "still fuzzy..."
+	text "Big bad! ROCKET!"
+	line "BRRRRRR..."
+	para "HEAD HURT!"
 
-	para "OUCH!"
-	para "HUH? WHO'S THERE?"
+	para "OUwwwwW!"
+	para "WHO DHIS?"
 
-	para "Ew, it's you. No"
-	line "one likes you!"
-	para "Go awa-"
+	para "MING MONG!"
+	line "DUPI DIED!"
+	para "BBBBBB"
 	prompt
 
 _OakText5::
-	text "AGH! OUCH!"
-	line "MMmmmmNNNNNNGGG"
-	para "The fuck you"
-	line "looking at?"
-
-	para "Want a POKéDEX"
-	line "my ass! Get out of"
-	cont "my house!"
-
-	para "OW!"
-	line "Do I know you?"
+	text "AGH! OUw!"
+	para "MHMMMM"
 	prompt

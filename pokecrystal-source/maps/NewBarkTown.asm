@@ -184,7 +184,6 @@ NotYetText:
 NotYetMovement:
 	turn_head RIGHT
 	step RIGHT
-	turn_head LEFT
 	step_end
 
 NewBarkTown_MapEvents:

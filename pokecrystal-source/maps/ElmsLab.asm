@@ -590,13 +590,13 @@ OakNotes6
 OakNotes1Text:
 	text "OAK'S NOTES"
 	
-	para "TAKE YOUR PILLS!"
+	para "TAKE PILLS!"
 	done
 
 OakNotes2Text:
 	text "OAK'S NOTES"
 
-	para "READ YOUR NOTES!"
+	para "READ NOTES!"
 	done
 
 OakNotes3Text:
@@ -756,125 +756,27 @@ ElmsLab_ElmToDefaultPositionMovement2:
 	step_end
 
 ElmText_Intro:
-	text "How did you get"
-	line "in here?"
+	text "WHO YOU?"
+	line "How you in here?"
 	
-	para "Do I know you?"
+	para "I know you?"
 
-	para "My memory hasn't"
-	line "been the best"
-	cont "lately."
+	para "BBBRRRNNNBBLL!"
 
-	para "I'm a #MON"
-	line "PROF!"
-
-	para "I'm the BEST"
-	line "#MON PROF"
-	cont "there is!"
-
-	para "Ah, so did"
-	line "you come here"
-	cont "for a #MON?"
+	para "Ah, you come"
+	line "for #MON?"
 	done
 
 ElmText_Accepted:
-	text "Well, you can't"
-	line "have one!"
+	text "WELL, NO FOR"
+	line "YOU!"
 
-	para "Those are MY"
-	line "cherished #MON!"
-
-	para "You hear me?!"
-
-	para "They're all mine!"
-
-	para "Get off my"
-	line "property!"
+	para "MY #MON!"
+	line "you GO NOW!"
 	done
 
 ElmText_Refused:
-	text "Well, you're"
-	line "trespassing on"
-	cont "private property!"
-
-	para "Leave!"
-	done
-
-ElmText_ResearchAmbitions:
-	text "When I announce my"
-	line "findings, I'm sure"
-
-	para "we'll delve a bit"
-	line "deeper into the"
-
-	para "many mysteries of"
-	line "#MON."
-
-	para "You can count on"
-	line "it!"
-	done
-
-ElmText_GotAnEmail:
-	text "Oh, hey! I got an"
-	line "e-mail!"
-
-	para "<……><……><……>"
-	line "Hm… Uh-huh…"
-
-	para "Okay…"
-	done
-
-ElmText_MissionFromMrPokemon:
-	text "Hey, listen."
-
-	para "I have an acquain-"
-	line "tance called MR."
-	cont "#MON."
-
-	para "He keeps finding"
-	line "weird things and"
-
-	para "raving about his"
-	line "discoveries."
-
-	para "Anyway, I just got"
-	line "an e-mail from him"
-
-	para "saying that this"
-	line "time it's real."
-
-	para "It is intriguing,"
-	line "but we're busy"
-
-	para "with our #MON"
-	line "research…"
-
-	para "Wait!"
-
-	para "I know!"
-
-	para "<PLAY_G>, can you"
-	line "go in our place?"
-	done
-
-ElmText_ChooseAPokemon:
-	text "I want you to"
-	line "raise one of the"
-
-	para "#MON contained"
-	line "in these BALLS."
-
-	para "You'll be that"
-	line "#MON's first"
-	cont "partner, <PLAY_G>!"
-
-	para "Go on. Pick one!"
-	done
-
-ElmText_LetYourMonBattleIt:
-	text "If a wild #MON"
-	line "appears, let your"
-	cont "#MON battle it!"
+	text "OK!!!!!!!"
 	done
 
 LabWhereGoingText:
@@ -909,7 +811,7 @@ TakeChikoritaText:
 	para "Sharp leaves?!"
 
 	para "Leaves aren't"
-	line "fucking sharp!"
+	line "sharp!"
 
 	para "What the hell"
 	line "Gamefreak?!"
@@ -1270,6 +1172,10 @@ AideText_AlwaysBusy:
 	para "His health hasn't"
 	line "been the best"
 	cont "lately."
+
+	para "Not to mention..."
+	line "his speech has"
+	cont "gotten much worse."
 
 	para "We moved him down"
 	line "to JOHTO so he"

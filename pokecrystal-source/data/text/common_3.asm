@@ -1,40 +1,15 @@
 _OakText6::
-	text "Who is this?"
-	line "Are you my friend?"
+	text "Who?"
+	line "Friend?"
 	prompt
 
 _OakText7::
-	text "<PLAYER>!"
-	para "Can you get me"
-	line "some water?"
+	text "<PLAYER>nnnn!"
+	para "THIRSY!"
+	line "ME WANT WATER!"
 
-	para "My head hurts."
-	line "My memory..."
-	para "it isn't what it"
-	line "used to be."
-
-	para "Alright."
-	para "I'll try my best"
-	line "on this next part."
-
-	para "Ahem."
-
-	para "<PLAYER>!"
-	line "DO YOU GET READY?"
-	cont "YOUR STORY WILL"
-	cont "START FROM NOW"
-	cont "AT ONCE"
-	cont "FOR THE FUTURE YOU"
-	cont "WILL MEET MANY"
-	cont "TRIALS AND"
-	cont "HARDSHIPS,"
-	cont "BITTER AND SWEET"
-	cont "TO EXPLORE THE"
-	cont "DREAMS"
-	cont "LET'S GO TO THE"
-	cont "MONSTER'S WORLD"
-	cont "START"
-	cont "SEE YOU LATER"
+	para "MMMMMMMMMMMM"
+	para "Oww..."
 	done
 
 UnknownText_0x1c40e6::
