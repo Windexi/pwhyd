@@ -2742,7 +2742,7 @@ wPhoneList:: ds CONTACT_LIST_SIZE ; dc7c
 	ds 23
 
 wLuckyNumberShowFlag:: db ; dc9d
-wRepelType:: db ; Automatically use more repel. PWHYD ADDED
+	ds 1
 wLuckyIDNumber:: dw ; dc9f
 
 wRepelEffect:: db ; If a Repel is in use, it contains the nr of steps it's still active
