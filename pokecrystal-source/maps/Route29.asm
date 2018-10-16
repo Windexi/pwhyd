@@ -6,7 +6,7 @@
 Route29_MapScripts:
 	db 1 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_ROUTE29_NOTHING
-	scene_script .DummyScene1
+	scene_script .DummyScene1 ; Catch Pokemon Tutorial
 
 .DummyScene0:
 	end
@@ -20,8 +20,8 @@ Route29Sign1:
 Route29Sign2:
 	jumptext Route29Sign2Text
 
-Route29HiddenItem:
-	hiddenitem RARE_CANDY, EVENT_ROUTE29_HIDDEN_ITEM
+;Route29HiddenItem:
+;	hiddenitem RARE_CANDY, EVENT_ROUTE29_HIDDEN_ITEM
 
 MrLetsBeFriends:
 	faceplayer
@@ -129,14 +129,14 @@ Route29_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	bg_event 51,  7, BGEVENT_READ, Route29Sign1
 	bg_event  3,  5, BGEVENT_READ, Route29Sign2
-	bg_event 53,  2, BGEVENT_ITEM, Route29HiddenItem
+;	bg_event 53,  2, BGEVENT_ITEM, Route29HiddenItem
 
 	db 5 ; object events
 	object_event 12,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route29FruitTree, -1
 	object_event 25,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MrLetsBeFriends, EVENT_LETS_BE_FRIENDS
 	object_event 53,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Bouncer, -1
 	object_event 57,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BouncerFriend1, -1
-	object_event 55,  2, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BouncerFriend2, -1
+	object_event 55,  2, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BouncerFriend2, -1

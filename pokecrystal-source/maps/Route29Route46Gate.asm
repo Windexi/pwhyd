@@ -8,30 +8,42 @@ Route29Route46Gate_MapScripts:
 	db 0 ; callbacks
 
 Route29Route46GateOfficerScript:
+	checkevent EVENT_LETS_BE_FRIENDS
+	iftrue DidYouSaySomething
 	jumptextfaceplayer Route29Route46GateOfficerText
+	end
 
 Route29Route46GateYoungsterScript:
 	jumptextfaceplayer Route29Route46GateYoungsterText
 
 Route29Route46GateOfficerText:
-	text "You can't climb"
-	line "ledges."
+	text "It sure is a nice"
+	line "day out!"
+	done
 
-	para "But you can jump"
-	line "down from them to"
-	cont "take a shortcut."
+DidYouSaySomething:
+	opentext
+	writetext LetsBeFriendsText
+	waitbutton
+	closetext
+	end
+
+LetsBeFriendsText:
+	text "A strange man just"
+	line "ran right through"
+	cont "here!"
+
+	para "Did you say"
+	line "something to him?"
 	done
 
 Route29Route46GateYoungsterText:
-	text "Different kinds of"
-	line "#MON appear"
-	cont "past here."
+	text "I hate those"
+	line "Republicans!"
 
-	para "If you want to"
-	line "catch them all,"
-
-	para "you have to look"
-	line "everywhere."
+	para "Why are they so"
+	line "mean? They hurt"
+	cont "my feelings!"
 	done
 
 Route29Route46Gate_MapEvents:
