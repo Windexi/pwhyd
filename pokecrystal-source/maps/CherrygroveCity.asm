@@ -53,27 +53,34 @@ CherrygroveCityMartSign:
 	jumpstd martsign
 
 CherrygroveTeacherText:
-	text "Did you talk to"
-	line "the old man by the"
-	cont "#MON CENTER?"
+	text "Don't speak to"
+	line "my sister in"
+	cont "NEW BARK TOWN."
 
-	para "He'll put a MAP of"
-	line "JOHTO on your"
-	cont "#GEAR."
+	para "She's rich..."
+	line "but..."
 	done
 
 CherrygroveYoungsterText:
-	text "MR.#MON's house"
-	line "is still farther"
-	cont "up ahead."
+	text "No one knows"
+	line "what goes on in"
+	cont "that tower over"
+	cont "there."
+
+	para "It was erected"
+	line "a while ago by"
+	cont "a GYM LEADER!"
+
+	para "I wonder what"
+	line "those are?"
 	done
 
 CherrygroveCitySignText:
 	text "CHERRYGROVE CITY"
 
 	para "Why is this a"
-	line "city? It's so"
-	cont "damn small..."
+	line "city? It's way"
+	cont "too small..."
 	done
 
 CherrygroveCity_MapEvents:
@@ -86,9 +93,7 @@ CherrygroveCity_MapEvents:
 	warp_event 29,  5, GUIDE_GENTS_HOUSE, 1
 	warp_event  7,  9, CHERRYGROVE_EVOLUTION_SPEECH_HOUSE, 1
 
-	db 2 ; coord events
-	coord_event 33,  6, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveSilverSceneNorth
-	coord_event 33,  7, SCENE_CHERRYGROVECITY_MEET_RIVAL, CherrygroveSilverSceneSouth
+	db 0 ; coord events
 
 	db 3 ; bg events
 	bg_event 26,  6, BGEVENT_READ, CherrygroveCitySign
@@ -96,5 +101,5 @@ CherrygroveCity_MapEvents:
 	bg_event 32, 11, BGEVENT_READ, CherrygroveCityPokecenterSign
 
 	db 2 ; object events
-	object_event 27, 12, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CherrygroveTeacherScript, -1
-	object_event 23,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveYoungsterScript, -1
+	object_event 18,  5, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CherrygroveTeacherScript, -1
+	object_event 27, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveYoungsterScript, -1
