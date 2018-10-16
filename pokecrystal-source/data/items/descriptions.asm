@@ -178,6 +178,7 @@ ItemDescriptions:
 	dw TeruSama23Desc
 	dw ParkBallDesc
 	dw RainbowWingDesc
+	dw BluePowderDesc ; PWHYD ADDED
 	dw TeruSama24Desc
 	dw BrickPieceDesc
 	dw SurfMailDesc
@@ -938,6 +939,10 @@ ParkBallDesc:
 RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
+
+BluePowderDesc:
+	db   "A strange fine"
+	next "blue powder...@"
 
 TeruSama24Desc:
 	db   "?@"

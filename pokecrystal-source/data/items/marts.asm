@@ -1,5 +1,5 @@
 Marts: ; 160a9
-; entries correspond to MART_* constants
+; entries correspond to MART_* constants \constants\item_data_constants.asm
 	dw MartCherrygrove
 	dw MartCherrygroveDex
 	dw MartViolet
@@ -34,6 +34,8 @@ Marts: ; 160a9
 	dw MartMtMoon
 	dw MartIndigoPlateau
 	dw MartUnderground
+	; PWHYD ADDED
+	dw MartDrugDealerCherrygrove
 .End
 ; 160ed
 
@@ -434,6 +436,11 @@ MartUnderground: ; 1620e
 	db REVIVAL_HERB
 	db -1 ; end
 ; 16214
+
+MartDrugDealerCherrygrove:
+	db 1
+	db STRANGEBLUEPOWDER
+	db -1
 
 DefaultMart: ; 16214
 	db 2 ; # items

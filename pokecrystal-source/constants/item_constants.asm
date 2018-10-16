@@ -184,6 +184,7 @@
 	const ITEM_B0      ; b0
 	const PARK_BALL    ; b1
 	const RAINBOW_WING ; b2
+	const STRANGEBLUEPOWDER ; PWHYD ADDED
 	const ITEM_B3      ; b3
 	const BRICK_PIECE  ; b4
 	const SURF_MAIL    ; b5

@@ -193,6 +193,7 @@ ItemEffects: ; e73c
 	dw NoEffect            ; ITEM_B0
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
+	dw FullRestoreEffect   ; STRANGEBLUEPOWDER
 	dw NoEffect            ; ITEM_B3
 ; e8a2
 
