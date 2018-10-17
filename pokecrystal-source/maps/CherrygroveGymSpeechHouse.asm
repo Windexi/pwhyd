@@ -1,45 +1,84 @@
 	const_def 2 ; object constants
-	const CHERRYGROVEGYMSPEECHHOUSE_POKEFAN_M
-	const CHERRYGROVEGYMSPEECHHOUSE_BUG_CATCHER
+	const CHERRYGROVEGYMSPEECHHOUSE_GUY1
+	const CHERRYGROVEGYMSPEECHHOUSE_GUY2
 
 CherrygroveGymSpeechHouse_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-CherrygroveGymSpeechHousePokefanMScript:
-	jumptextfaceplayer CherrygroveGymSpeechHousePokefanMText
+Guy1:
+	faceplayer
+	opentext
+	writetext WantInfoText
+	yesorno
+	iftrue Guy1History
+	writetext WantInfoNoText
+	waitbutton
+	closetext
+	end
 
-CherrygroveGymSpeechHouseBugCatcherScript:
-	jumptextfaceplayer CherrygroveGymSpeechHouseBugCatcherText
+Guy1History:
+	writetext Guy1HistoryText
+	waitbutton
+	closetext
+	end
+
+Guy2:
+	jumptextfaceplayer Guy2Text
 
 CherrygroveGymSpeechHouseBookshelf:
 	jumpstd picturebookshelf
 
-CherrygroveGymSpeechHousePokefanMText:
-	text "You're trying to"
-	line "see how good you"
+WantInfoText:
+	text "Well hey there!"
+	line "You seem like a"
+	cont "new TRAINER!"
 
-	para "are as a #MON"
-	line "trainer?"
-
-	para "You better visit"
-	line "the #MON GYMS"
-
-	para "all over JOHTO and"
-	line "collect BADGES."
+	para "Wanna know some"
+	line "history behind"
+	cont "this old region"
+	cont "here?"
 	done
 
-CherrygroveGymSpeechHouseBugCatcherText:
-	text "When I get older,"
-	line "I'm going to be a"
-	cont "GYM LEADER!"
+WantInfoNoText:
+	text "Oh, well maybe"
+	line "some other time!"
+	done
 
-	para "I make my #MON"
-	line "battle with my"
+Guy1HistoryText:
+	text "A long time ago,"
+	line "there used to be"
+	cont "these things"
+	cont "called GYM LEADERS!"
 
-	para "friend's to make"
-	line "them tougher!"
+	para "TRAINERS would"
+	line "battle them to"
+	cont "get BADGES!"
+
+	para "...but a while"
+	line "ago the CHAMPION"
+	cont "convinced the"
+	cont "ELITE FOUR to"
+	cont "remove the GYMs."
+
+	para "Why, you ask?"
+	para "Well, no one"
+	line "really knows."
+
+	para "Now, trainers"
+	line "just battle each"
+	cont "other for fun!"
+
+	para "It's much better"
+	line "this way, don't"
+	cont "you think?"
+	done
+
+Guy2Text:
+	text "Hmmm..."
+	para "I don't like you!"
+	cont "You're weird!"
 	done
 
 CherrygroveGymSpeechHouse_MapEvents:
@@ -56,5 +95,5 @@ CherrygroveGymSpeechHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
 
 	db 2 ; object events
-	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHousePokefanMScript, -1
-	object_event  5,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHouseBugCatcherScript, -1
+	object_event  0,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Guy1, -1
+	object_event  5,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Guy2, -1
