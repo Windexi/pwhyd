@@ -108,4 +108,6 @@ OverworldSprites: ; 14736
 	overworld_sprite EnteiSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite RaikouSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite StandingYoungsterSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	; PWHYD ADDED
 	overworld_sprite LyingOakGFX, 4, STILL_SPRITE, PAL_OW_BROWN
+	overworld_sprite WalterGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
