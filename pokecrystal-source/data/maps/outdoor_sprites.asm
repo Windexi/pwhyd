@@ -368,6 +368,8 @@ CherrygroveGroupSprites: ; 14600
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
+	db SPRITE_WALTER
+	db SPRITE_JESSE
 ; 14617
 
 SilverGroupSprites: ; 14617
