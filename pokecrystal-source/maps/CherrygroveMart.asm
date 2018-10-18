@@ -18,8 +18,15 @@ CherrygroveMartCooltrainerMScript:
 	faceplayer
 	opentext
 	writetext CherrygroveMartCooltrainerMText
+;	pokemart MARTTYPE_STANDARD, MART_DRUGDEALERCHERRYGROVE ; old integration
+	yesorno
+	iftrue SellDrugs
+	jp NotEnoughMoney
+	end
+
+NotEnoughMoney:
+	writetext WastingText
 	waitbutton
-	pokemart MARTTYPE_STANDARD, MART_DRUGDEALERCHERRYGROVE
 	closetext
 	end
 
@@ -35,6 +42,27 @@ CherrygroveMartCooltrainerMText:
 	
 	para "My price is"
 	line "2,500/oz."
+
+	para "So, whaddaya say?"
+	done
+
+WastingText:
+	text "Quit wasting my"
+	line "time."
+	done
+
+SellDrugs:
+	checkmoney YOUR_MONEY, 2500
+	ifequal HAVE_LESS, NotEnoughMoney
+	takemoney YOUR_MONEY, 2500
+	giveitem STRANGEBLUEPOWDER
+	playsound SFX_ITEM
+	writetext GotDrugsText
+	end
+
+GotDrugsText:
+	text "Recieved"
+	line "BLUE POWDER!"
 	done
 
 CherrygroveMartYoungsterText:
