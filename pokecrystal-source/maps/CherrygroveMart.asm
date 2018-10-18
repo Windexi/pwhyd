@@ -58,6 +58,8 @@ SellDrugs:
 	giveitem STRANGEBLUEPOWDER
 	playsound SFX_ITEM
 	writetext GotDrugsText
+	waitbutton
+	closetext
 	end
 
 GotDrugsText:
