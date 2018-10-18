@@ -107,6 +107,7 @@
 	; PWHYD ADDED
 	const SPRITE_LYING_OAK
 	const SPRITE_WALTER
+	const SPRITE_JESSE
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

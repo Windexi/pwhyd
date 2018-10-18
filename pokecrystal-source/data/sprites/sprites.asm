@@ -111,3 +111,4 @@ OverworldSprites: ; 14736
 	; PWHYD ADDED
 	overworld_sprite LyingOakGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite WalterGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite JesseGFX, 12, WALKING_SPRITE, PAL_OW_BROWN

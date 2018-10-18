@@ -104,11 +104,11 @@ Landmarks: ; 0x1ca8c3
 	landmark 148, 132, FastShipName
 ; 0x1caa43
 
-NewBarkTownName:     db "NEW BARK¯TOWN@"
-CherrygroveCityName: db "CHERRYGROVE¯CITY@"
-VioletCityName:      db "VIOLET CITY@"
-AzaleaTownName:      db "AZALEA TOWN@"
-GoldenrodCityName:   db "GOLDENROD¯CITY@"
+NewBarkTownName:     db "REDSTONE¯TOWN@"
+CherrygroveCityName: db "DUPI CITY@"
+VioletCityName:      db "FONTAN CITY@"
+AzaleaTownName:      db "MEXICO@"
+GoldenrodCityName:   db "CHAD CITY,¯JOHTO CAPITAL@"
 EcruteakCityName:    db "ECRUTEAK¯CITY@"
 OlivineCityName:     db "OLIVINE¯CITY@"
 CianwoodCityName:    db "CIANWOOD¯CITY@"

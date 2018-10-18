@@ -76,11 +76,9 @@ CherrygroveYoungsterText:
 	done
 
 CherrygroveCitySignText:
-	text "CHERRYGROVE CITY"
+	text "DUPI CITY"
 
-	para "Why is this a"
-	line "city? It's way"
-	cont "too small..."
+	para "Who is Dupi?"
 	done
 
 CherrygroveCity_MapEvents:

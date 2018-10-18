@@ -112,3 +112,4 @@ SECTION "Sprites 3", ROMX
 ; PWHYD ADDED
 LyingOakGFX::                  INCBIN "gfx/sprites/lying_oak.2bpp"
 WalterGFX::                    INCBIN "gfx/sprites/walter.2bpp"
+JesseGFX::                     INCBIN "gfx/sprites/jesse.2bpp"

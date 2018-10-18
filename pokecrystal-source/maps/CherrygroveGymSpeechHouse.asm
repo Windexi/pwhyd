@@ -50,11 +50,12 @@ Guy1HistoryText:
 	text "A long time ago,"
 	line "there used to be"
 	cont "these things"
-	cont "called GYM LEADERS!"
+	cont "called GYMS!"
 
 	para "TRAINERS would"
-	line "battle them to"
-	cont "get BADGES!"
+	line "challenge the"
+	cont "GYM LEADER to"
+	cont "get GYM BADGES!"
 
 	para "...but a while"
 	line "ago the CHAMPION"
@@ -78,7 +79,7 @@ Guy1HistoryText:
 Guy2Text:
 	text "Hmmm..."
 	para "I don't like you!"
-	cont "You're weird!"
+	line "You're weird!"
 	done
 
 CherrygroveGymSpeechHouse_MapEvents:

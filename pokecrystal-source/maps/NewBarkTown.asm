@@ -129,7 +129,7 @@ Text_ElmDiscoveredNewMon:
 	done
 
 NewBarkTownSignText:
-	text "NEW BARK TOWN"
+	text "REDSTONE TOWN"
 	para "Unfortunately,"
 	line "existing."
 	done
