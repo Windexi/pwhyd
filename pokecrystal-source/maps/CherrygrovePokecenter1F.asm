@@ -18,52 +18,44 @@ CherrygrovePokecenter1FFisherScript:
 CherrygrovePokecenter1FGentlemanScript:
 	jumptextfaceplayer CherrygrovePokecenter1FGentlemanText
 
-CherrygrovePokecenter1FTeacherScript:
+FortniteKid:
 	faceplayer
 	opentext
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .CommCenterOpen
 	writetext CherrygrovePokecenter1FTeacherText
 	waitbutton
 	closetext
 	end
 
-.CommCenterOpen:
-	writetext CherrygrovePokecenter1FTeacherText_CommCenterOpen
-	waitbutton
-	closetext
-	end
-
 CherrygrovePokecenter1FFisherText:
-	text "It's great. I can"
-	line "store any number"
+	text "I love Tik Tok!"
+	line "you can do these"
+	cont "things called"
+	cont "DUETS on it!"
 
-	para "of #MON, and"
-	line "it's all free."
+	para "I do all these"
+	line "cool DUETS with"
+	cont "teenagers!"
 	done
 
 CherrygrovePokecenter1FGentlemanText:
-	text "That PC is free"
-	line "for any trainer"
-	cont "to use."
+	text "You can use"
+	line "that PC over"
+	cont "there!"
+
+	para "Don't worry,"
+	line "it's free!"
+	cont "the government"
+	cont "pays for it!"
 	done
 
 CherrygrovePokecenter1FTeacherText:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
-	cont "was just built."
+	text "HEY!!!!!!"
+	
+	para "Do you play"
+	line "FORTNITE???"
 
-	para "But they're still"
-	line "finishing it up."
-	done
-
-CherrygrovePokecenter1FTeacherText_CommCenterOpen:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
-	cont "was just built."
-
-	para "I traded #MON"
-	line "there already!"
+	para "No? Haha!"
+	line "take this L!"
 	done
 
 CherrygrovePokecenter1F_MapEvents:
@@ -82,4 +74,4 @@ CherrygrovePokecenter1F_MapEvents:
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FNurseScript, -1
 	object_event  2,  3, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FFisherScript, -1
 	object_event  8,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FGentlemanScript, -1
-	object_event  1,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CherrygrovePokecenter1FTeacherScript, -1
+	object_event  1,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FortniteKid, -1

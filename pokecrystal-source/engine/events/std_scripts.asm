@@ -107,18 +107,18 @@ PokecenterNurseScript:
 	iffalse .done
 
 	farwritetext NurseTakePokemonText
-	pause 20
-	special StubbedTrainerRankings_Healings
+;	pause 20
+;	special StubbedTrainerRankings_Healings
 	turnobject LAST_TALKED, LEFT
 	pause 10
 	special HealParty
 	playmusic MUSIC_NONE
 	writebyte HEALMACHINE_POKECENTER
 	special HealMachineAnim
-	pause 30
+	pause 10
 	special RestartMapMusic
 	turnobject LAST_TALKED, DOWN
-	pause 10
+;	pause 10
 
 	checkphonecall ; elm already called about pokerus
 	iftrue .no
