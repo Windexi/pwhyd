@@ -3,7 +3,7 @@
 <a name="top" href="http://github.com/Windexi/pwhyd/"><img align="middle" style="margin: -45px;" src="https://github.com/Windexi/pwhyd/blob/master/pwhyd.png?raw=true"></a>
 
 
-### A Pokemon ROM hack focused on realism and sattire.
+## Not your conventional Pokemon ROM Hack
 
 A few things:
 - [Public Test Builds](https://github.com/Windexi/pwhyd/blob/master/BUILDS.md)
