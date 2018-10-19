@@ -16,4 +16,3 @@ Socials:
 - [Twitter](http://twitter.com/windexi)
 - [/u/windexi](http://reddit.com/u/windexi)
 - [/r/PokemonROMHacks](http://reddit.com/r/pokemonROMhacks)
-- [Join _The Lunaverse_ to talk to me and other fanatics!](https://discord.gg/fMJUcQr)
