@@ -1,4 +1,4 @@
-; overworld_sprite struct members (see data/sprites.asm)
+; overworld_sprite struct members (see data/sprites.asm) data/sprites/sprites.asm?
 	const_def
 	const SPRITEDATA_ADDR    ; 0
 	const SPRITEDATA_ADDR_HI ; 1

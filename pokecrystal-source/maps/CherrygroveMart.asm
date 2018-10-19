@@ -1,7 +1,7 @@
 	const_def 2 ; object constants
 	const CHERRYGROVEMART_CLERK
-	const CHERRYGROVEMART_COOLTRAINER_M
-	const CHERRYGROVEMART_YOUNGSTER
+	const CHERRYGROVEMART_JESSE
+	const CHERRYGROVEMART_GRAMPS
 
 CherrygroveMart_MapScripts:
 	db 0 ; scene scripts
@@ -10,13 +10,6 @@ CherrygroveMart_MapScripts:
 
 CherrygroveMartClerkScript:
 	opentext
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .PokeBallsInStock
-	pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE
-	closetext
-	end
-
-.PokeBallsInStock:
 	pokemart MARTTYPE_STANDARD, MART_CHERRYGROVE_DEX
 	closetext
 	end
@@ -24,15 +17,15 @@ CherrygroveMartClerkScript:
 CherrygroveMartCooltrainerMScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .PokeBallsInStock
 	writetext CherrygroveMartCooltrainerMText
-	waitbutton
-	closetext
+;	pokemart MARTTYPE_STANDARD, MART_DRUGDEALERCHERRYGROVE ; old integration
+	yesorno
+	iftrue SellDrugs
+	jp NotEnoughMoney
 	end
 
-.PokeBallsInStock:
-	writetext CherrygroveMartCooltrainerMText_PokeBallsInStock
+NotEnoughMoney:
+	writetext WastingText
 	waitbutton
 	closetext
 	end
@@ -41,32 +34,46 @@ CherrygroveMartYoungsterScript:
 	jumptextfaceplayer CherrygroveMartYoungsterText
 
 CherrygroveMartCooltrainerMText:
-	text "They're fresh out"
-	line "of # BALLS!"
+	text "What are you"
+	line "looking at?"
 
-	para "When will they get"
-	line "more of them?"
+	para "Oh... I get it."
+	line "You need some?"
+	
+	para "My price is"
+	line "2,500/oz."
+
+	para "So, whaddaya say?"
 	done
 
-CherrygroveMartCooltrainerMText_PokeBallsInStock:
-	text "# BALLS are in"
-	line "stock! Now I can"
-	cont "catch #MON!"
+WastingText:
+	text "Quit wasting my"
+	line "time."
+	done
+
+SellDrugs:
+	checkmoney YOUR_MONEY, 2500
+	ifequal HAVE_LESS, NotEnoughMoney
+	takemoney YOUR_MONEY, 2500
+	giveitem STRANGEBLUEPOWDER
+	playsound SFX_ITEM
+	writetext GotDrugsText
+	waitbutton
+	closetext
+	end
+
+GotDrugsText:
+	text "Recieved"
+	line "BLUE POWDER!"
 	done
 
 CherrygroveMartYoungsterText:
-	text "When I was walking"
-	line "in the grass, a"
+	text "That strange man"
+	line "over there keeps"
+	cont "fidgeting..."
 
-	para "bug #MON poi-"
-	line "soned my #MON!"
-
-	para "I just kept going,"
-	line "but then my"
-	cont "#MON fainted."
-
-	para "You should keep an"
-	line "ANTIDOTE with you."
+	para "Should we call an"
+	line "ambulance?"
 	done
 
 CherrygroveMart_MapEvents:
@@ -82,5 +89,5 @@ CherrygroveMart_MapEvents:
 
 	db 3 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartClerkScript, -1
-	object_event  7,  6, SPRITE_WALTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartCooltrainerMScript, -1
-	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveMartYoungsterScript, -1
+	object_event  7,  6, SPRITE_JESSE, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartCooltrainerMScript, -1
+	object_event  2,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveMartYoungsterScript, -1

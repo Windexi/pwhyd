@@ -106,11 +106,10 @@ SuicuneSpriteGFX::             INCBIN "gfx/sprites/suicune.2bpp" ; c7e00
 EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp" ; c7e40
 RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp" ; c7e80
 StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp" ; c7ec0
-;WalterGFX::                    INCBIN "gfx/sprites/walter.2bpp"
+
 
 SECTION "Sprites 3", ROMX
 
-; PWHYD ADDED
-LyingOakGFX::                  INCBIN "gfx/sprites/lying_oak.2bpp"
-WalterGFX::                    INCBIN "gfx/sprites/walter.2bpp"
-JesseGFX::                     INCBIN "gfx/sprites/jesse.2bpp"
+LyingOakGFX:: INCBIN "gfx/sprites/lying_oak.2bpp"
+WalterGFX::   INCBIN "gfx/sprites/walter.2bpp" ; use r++ waiter.2bpp for debug
+JesseGFX::    INCBIN "gfx/sprites/jesse.2bpp"

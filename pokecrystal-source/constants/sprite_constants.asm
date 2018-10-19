@@ -104,14 +104,12 @@
 	const SPRITE_ENTEI ; 64
 	const SPRITE_RAIKOU ; 65
 	const SPRITE_STANDING_YOUNGSTER ; 66
-	;const SPRITE_WALTER
-	; PWHYD ADDED
-	const SPRITE_LYING_OAK
+	const SPRITE_LYING_OAK ; PWHYD ADDED
 	const SPRITE_WALTER
 	const SPRITE_JESSE
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
-	const_def $80
+	const_def $90
 SPRITE_POKEMON EQU const_value
 	const SPRITE_UNOWN ; 80
 	const SPRITE_GEODUDE ; 81
@@ -150,12 +148,12 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_HO_OH ; a2
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
-	const_def $e0
+	const_def $f0
 	const SPRITE_DAY_CARE_MON_1 ; e0
 	const SPRITE_DAY_CARE_MON_2 ; e1
 
 ; wVariableSprites indexes (see wram.asm)
-	const_def $f0
+	const_def $g0
 SPRITE_VARS EQU const_value
 	const SPRITE_CONSOLE ; f0
 	const SPRITE_DOLL_1 ; f1
