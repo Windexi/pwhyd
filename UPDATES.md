@@ -8,6 +8,8 @@ Kindest regards,
 
 ~ Windexi
 
+[Go back](https://github.com/Windexi/pwhyd)
+
 ## September 11th, 2018 // 1:59PM PST
 Well, I'm back! I hope you all had a wonderful summer, I know I did! I'm very exhausted from months of volunteerwork, but now should be able to kickstart the project once more. Updates will start rolling out soon. I opened up the .gbc to recheck my progress, and there was a bunch of stuff broken... yay. Looks like I have my work cut out for me!
 
@@ -15,12 +17,16 @@ See you soon!
 
 ~ Windexi
 
+[Go back](https://github.com/Windexi/pwhyd)
+
 ## June 9th, 2018 // 12:43AM PST
 Hello everyone. I have made some significant progress on Route 29 and some titlescreen FX for the project, but the time has come, and this will most likely be my last update for a while. Early in the morning, I will set off to start my volunteer jobs for the Summer, and development will most likely come halt for a bit.
 
 Bye for now, I should get some rest.
 
 ~ Windexi
+
+[Go back](https://github.com/Windexi/pwhyd)
 
 ## June 4th, 2018 // 4:15PM PST
 New Bark Town is complete! The complex scripting in Oak's Lab has been finished after days of tests, and I am very excited for the future of this project.
