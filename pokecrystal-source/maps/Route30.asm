@@ -356,8 +356,8 @@ Route30CooltrainerFText:
 Route30SignText:
 	text "ROUTE 30"
 
-	para "FONTAN CITY ↑"
-	line "DUPI CITY   ↓"
+	para "FONTAN CITY -"
+	line "DUPI CITY  "
 	done
 
 HiddenSignText:
