@@ -227,11 +227,11 @@ Route30CooltrainerFScript:
 Route30Sign:
 	jumptext Route30SignText
 
-MrPokemonsHouseDirectionsSign:
-	jumptext MrPokemonsHouseDirectionsSignText
+HiddenSign:
+	jumptext HiddenSignText
 
-MrPokemonsHouseSign:
-	jumptext MrPokemonsHouseSignText
+VaccineHouseSign:
+	jumptext VaccineHouseSignText
 
 Route30TrainerTips:
 	jumptext Route30TrainerTipsText
@@ -365,16 +365,17 @@ Route30CooltrainerFText:
 Route30SignText:
 	text "ROUTE 30"
 
-	para "VIOLET CITY -"
-	line "CHERRYGROVE CITY"
+	para "FONTAN CITY ↑"
+	line "DUPI CITY   ↓"
 	done
 
-MrPokemonsHouseDirectionsSignText:
-	text "MR.#MON'S HOUSE"
-	line "STRAIGHT AHEAD!"
+HiddenSignText:
+	text "OAK'S NOTES"
+	para "CTRL-C is copy!"
+	line "CTRL-V is paste!"
 	done
 
-MrPokemonsHouseSignText:
+VaccineHouseSignText:
 	text "MR.#MON'S HOUSE"
 	done
 
@@ -408,17 +409,17 @@ Route30_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  7, 39, ROUTE_30_BERRY_HOUSE, 1
-	warp_event 17,  5, MR_POKEMONS_HOUSE, 1
+	warp_event  8, 39, ROUTE_30_BERRY_HOUSE, 1 ; TODO: turn into cave
+	warp_event  3, 25, MR_POKEMONS_HOUSE, 1 ; TODO: turn into TM House
 
 	db 0 ; coord events
 
 	db 5 ; bg events
-	bg_event  9, 43, BGEVENT_READ, Route30Sign
-	bg_event 13, 29, BGEVENT_READ, MrPokemonsHouseDirectionsSign
-	bg_event 15,  5, BGEVENT_READ, MrPokemonsHouseSign
-	bg_event  3, 21, BGEVENT_READ, Route30TrainerTips
-	bg_event 14,  9, BGEVENT_ITEM, Route30HiddenPotion
+	bg_event  5, 47, BGEVENT_READ, Route30Sign
+	bg_event 17, 41, BGEVENT_READ, HiddenSign
+	bg_event 15, 13, BGEVENT_READ, VaccineHouseSign
+	bg_event  3, 21, BGEVENT_READ, Route30TrainerTips ; TODO: visible item
+	bg_event 14,  9, BGEVENT_ITEM, Route30HiddenPotion ; TODO: change item
 
 	db 11 ; object events
 	object_event  5, 26, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, YoungsterJoey_ImportantBattleScript, EVENT_ROUTE_30_BATTLE
