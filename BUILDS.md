@@ -1,4 +1,4 @@
-## Public Test Builds
+## Alpha Test Builds
 
 # Alpha 0.2
 - [Changelog](https://github.com/Windexi/pwhyd/blob/master/CHANGELOG.md)
