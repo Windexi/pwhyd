@@ -16,4 +16,4 @@ Socials:
 - [Twitter](http://twitter.com/windexi)
 - [/u/windexi](http://reddit.com/u/windexi)
 - [/r/PokemonROMHacks](http://reddit.com/r/pokemonROMhacks)
-- [Talk to me and other people on pret2](https://discord.gg/Nk4kCE7)
+- [Talk to me and others on pret2](https://discord.gg/Nk4kCE7)
