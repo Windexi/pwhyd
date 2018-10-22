@@ -1,6 +1,13 @@
 # Progress Reports!
 ## A dedicated page for notices on important development updates.
 
+## October 21st, 2018 // 11:57PM PST
+Hello again! It's time for another status update! For now, Cherrygrove City is also completed, and I have posted Alpha 0.2 over at the [dedicated Builds page.](https://github.com/Windexi/pwhyd/blob/master/BUILDS.md) I've slowly become more and more knowledgeable on Assembly scripting as I go on, and have mostly been working on ironing out the bugs I create with every new commit I push. I'm very excited to continue development on this hack though, and as of now have made some pretty substantial progress! Also, I made a [quick announcement](https://www.reddit.com/r/PokemonROMhacks/comments/9qb380/wip_pokemon_what_have_you_done/) on /r/pokemonromhacks about the project, so hopefully that will spark some interest! I know that it's made me very excited for what's to come. I have definitely altered the story from what it originally was set out to be, and I think it's definitely for the better. As I continue work, I keep coming up with awesome ideas for what I should do next. Stay tuned
+
+Kindest regards,
+
+~ Windexi
+
 ## September 11th, 2018 // 1:59PM PST
 Well, I'm back! I hope you all had a wonderful summer, I know I did! I'm very exhausted from months of volunteerwork, but now should be able to kickstart the project once more. Updates will start rolling out soon. I opened up the .gbc to recheck my progress, and there was a bunch of stuff broken... yay. Looks like I have my work cut out for me!
 
