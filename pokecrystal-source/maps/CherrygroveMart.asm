@@ -21,11 +21,17 @@ CherrygroveMartCooltrainerMScript:
 ;	pokemart MARTTYPE_STANDARD, MART_DRUGDEALERCHERRYGROVE ; old integration
 	yesorno
 	iftrue SellDrugs
-	jp NotEnoughMoney
+	jp SaidNo
+	end
+
+SaidNo:
+	writetext WastingText
+	waitbutton
+	closetext
 	end
 
 NotEnoughMoney:
-	writetext WastingText
+	writetext BrokeText
 	waitbutton
 	closetext
 	end
@@ -44,6 +50,14 @@ CherrygroveMartCooltrainerMText:
 	line "2,500/oz."
 
 	para "So, whaddaya say?"
+	done
+
+BrokeText:
+	text "What?"
+	line "You're broke?"
+
+	para "We don't do"
+	line "free samples."
 	done
 
 WastingText:
