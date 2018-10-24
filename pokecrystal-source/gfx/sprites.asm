@@ -111,5 +111,6 @@ StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp" ; c7
 SECTION "Sprites 3", ROMX
 
 LyingOakGFX:: INCBIN "gfx/sprites/lying_oak.2bpp"
-WalterGFX::   INCBIN "gfx/sprites/walter.2bpp" ; use r++ waiter.2bpp for debug
+WalterGFX::   INCBIN "gfx/sprites/walter.2bpp"
 JesseGFX::    INCBIN "gfx/sprites/jesse.2bpp"
+AdrianGFX::   INCBIN "gfx/sprites/adrian.2bpp"
