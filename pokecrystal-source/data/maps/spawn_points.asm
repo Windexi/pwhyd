@@ -23,11 +23,11 @@ SpawnPoints: ; 0x152ab
 	spawn CINNABAR_ISLAND,            11, 12
 	spawn ROUTE_23,                    9,  6
 
-	spawn NEW_BARK_TOWN,              13,  6
-	spawn CHERRYGROVE_CITY,           29,  4
+	spawn NEW_BARK_TOWN,              14,  6
+	spawn CHERRYGROVE_CITY,           31, 12
 	spawn VIOLET_CITY,                31, 26
 	spawn ROUTE_32,                   11, 74
-	spawn AZALEA_TOWN,                15, 10
+	spawn AZALEA_TOWN,                 7,  8
 	spawn CIANWOOD_CITY,              23, 44
 	spawn GOLDENROD_CITY,             15, 28
 	spawn OLIVINE_CITY,               13, 22

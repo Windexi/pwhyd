@@ -41,7 +41,7 @@ MeetAdrian:
 	writetext MeetAdrianText
 	waitbutton
 	closetext
-	loadtrainer RIVAL1, RIVAL1_1_RALTS
+	loadtrainer RIVAL1, RIVAL1_1_LICKITUNG
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	dontrestartmapmusic
@@ -64,7 +64,7 @@ AdrianWon:
 	waitbutton
 	closetext
 AdrianLeaves:
-	applymovement AdrianLeavesMovement
+	applymovement ROUTE30_ADRIAN, AdrianLeavesMovement
 	disappear ROUTE30_ADRIAN
 	setscene SCENE_ROUTE30_NOTHING
 	special HealParty
@@ -72,30 +72,87 @@ AdrianLeaves:
 	end
 
 MeetAdrianText:
-	text 
+	text "Oh, hello!"
+	line "don't I know you"
+	cont "from somewhere?"
 
-YoungsterJoey_ImportantBattleScript:
-	waitsfx
-	playmusic MUSIC_JOHTO_TRAINER_BATTLE
-	opentext
-	writetext Text_UseTackle
-	pause 30
-	closetext
-	playsound SFX_TACKLE
-	applymovement ROUTE30_MONSTER2, Route30_JoeysRattataAttacksMovement
-	opentext
-	faceplayer
-	writetext Text_ThisIsABigBattle
-	waitbutton
-	turnobject ROUTE30_YOUNGSTER1, UP
-	closetext
-	playsound SFX_TACKLE
-	applymovement ROUTE30_MONSTER1, Route30_MikeysRattataAttacksMovement
-	special RestartMapMusic
-	end
+	para "<……> <……> <……>"
 
-TrainerYoungsterJoey:
-	trainer YOUNGSTER, JOEY1, EVENT_BEAT_YOUNGSTER_JOEY, YoungsterJoey1SeenText, YoungsterJoey1BeatenText, 0, .Script
+	para "Oh yes! You're"
+	line "that quiet kid"
+	cont "from town!"
+
+	para "Well, allow me"
+	line "to introduce"
+	cont "myself!"
+
+	para "the name's"
+	line "ADRIAN!"
+
+	para "I live in that"
+	line "big 'ol house"
+	cont "smack dab"
+	cont "in the middle."
+
+	para "<……> <……> <……>"
+
+	para ":D"
+
+	para "<……> <……> <……>"
+
+	para "Say! How about"
+	line "we have a quick"
+	cont "battle? Just"
+	cont "the two of us!"
+
+	para "It'll be fun!"
+	done
+
+AdrianWonText:
+	para "Wow..."
+	line "I won! :DDD"
+
+	para "I didn't think"
+	line "I was THAT good!"
+
+	para "Well, you did"
+	line "good too! Don't"
+	cont "be too hard"
+	cont "on yourself!"
+
+	para "Hey, I'm going"
+	line "to go ahead..."
+	
+	para "...but I'll see"
+	line "you again, I"
+	cont "hope!! ;;)"
+
+	para "Seeyaaaa!"
+	done
+
+YouBeatAdrianText:
+	para "Awwwwww :("
+	line "I lost!"
+
+	para "My poor"
+	line "LICKITUNG!"
+
+	para "Oh well, that"
+	line "was a GREAT"
+	cont "battle!"
+
+	para "You're really"
+	line "good!!!! :DD"
+
+	para "Hey, I'm going"
+	line "to go ahead..."
+	
+	para "...but I'll see"
+	line "you again, I"
+	cont "hope!! ;;)"
+
+	para "Seeyaaaa!"
+	done
 
 .Script:
 	writecode VAR_CALLERID, PHONE_YOUNGSTER_JOEY
@@ -505,8 +562,8 @@ Route30_MapEvents:
 	bg_event 10, 51, BGEVENT_ITEM, Route30HiddenPotion
 
 	db 6 ; object events
-	object_event  4, 47, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, YoungsterJoey_ImportantBattleScript, EVENT_ROUTE_30_BATTLE
-	object_event  8, 43, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterJoey, EVENT_ROUTE_30_YOUNGSTER_JOEY
+	object_event  4, 47, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
+	object_event  8, 43, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, ObjectEvent, EVENT_ROUTE_30_YOUNGSTER_JOEY
 	object_event 10, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerYoungsterMikey, -1
 	object_event 16, 19, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherDon, -1
 	object_event  4, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1

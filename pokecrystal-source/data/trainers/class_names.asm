@@ -8,7 +8,7 @@ TrainerClassNames:: ; 2c1ef
 	db "LEADER@"
 	db "LEADER@"
 	db "LEADER@"
-	db "RIVAL@"
+	db "ADRIAN" ; changed from RIVAL@
 	db "#MON PROF.@"
 	db "ELITE FOUR@"
 	db "<PKMN> TRAINER@"

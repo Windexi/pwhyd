@@ -10,7 +10,7 @@ TrainerPicPointers::
 	dba_pic JasminePic
 	dba_pic ChuckPic
 	dba_pic ClairPic
-	dba_pic Rival1Pic
+	dba_pic Rival1Pic ; ADRIAN
 	dba_pic PokemonProfPic
 	dba_pic WillPic
 	dba_pic CalPic

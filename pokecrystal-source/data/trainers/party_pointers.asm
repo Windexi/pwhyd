@@ -10,7 +10,7 @@ TrainerGroups: ; 0x39999
 	dw JasmineGroup
 	dw ChuckGroup
 	dw ClairGroup
-	dw Rival1Group
+	dw Rival1Group ; ADRIAN
 	dw PokemonProfGroup
 	dw WillGroup
 	dw PKMNTrainerGroup

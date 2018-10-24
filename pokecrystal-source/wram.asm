@@ -2593,6 +2593,9 @@ wDragonShrineSceneID::                            db ; d9b9
 wOlivinePortSceneID::                             db ; d9ba
 wVermilionPortSceneID::                           db ; d9bb
 wFastShip1FSceneID::                              db ; d9bc
+; PWHYD ADDED
+wRoute30SceneID::                                 db 
+;
 wFastShipB1FSceneID::                             db ; d9bd
 wMountMoonSquareSceneID::                         db ; d9be
 wMobileTradeRoomSceneID::                         db ; d9bf

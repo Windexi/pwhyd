@@ -10,7 +10,7 @@ BTTrainerClassGenders: ; 11f2f0
 	db FEMALE ; JASMINE
 	db MALE   ; CHUCK
 	db FEMALE ; CLAIR
-	db MALE   ; RIVAL1
+	db FEMALE ; RIVAL1/ADRIAN
 	db MALE   ; POKEMON_PROF
 	db FEMALE ; WILL
 	db MALE   ; CAL

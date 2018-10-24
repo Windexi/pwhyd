@@ -10,7 +10,7 @@ TrainerClassDVs: ; 270d6
 	db $98, $88 ; jasmine
 	db $98, $88 ; chuck
 	db $7C, $DD ; clair
-	db $DD, $DD ; rival1
+	db $DD, $DD ; rival1 ; ADRIAN
 	db $98, $88 ; pokemon prof
 	db $DC, $DD ; will
 	db $DC, $DD ; cal

@@ -80,20 +80,11 @@ ClairGroup:
 	db -1 ; end
 
 
-Rival1Group:
-	; RIVAL1 (1)
-	db "?@", TRAINERTYPE_NORMAL
-	db  5, CHIKORITA
-	db -1 ; end
+Rival1Group: ; ADRIAN
 
-	; RIVAL1 (2)
-	db "?@", TRAINERTYPE_NORMAL
-	db  5, CYNDAQUIL
-	db -1 ; end
-
-	; RIVAL1 (3)
-	db "?@", TRAINERTYPE_NORMAL
-	db  5, TOTODILE
+	; RIVAL1_1_LICKITUNG
+	db "?@", TRAINERTYPE_MOVES
+	db  5, LICKITUNG,  LICK, TACKLE
 	db -1 ; end
 
 	; RIVAL1 (4)

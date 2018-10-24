@@ -187,12 +187,64 @@ NotYetMovement:
 	step_end
 
 DebugScript:
+	opentext
+	; give money
+	givemoney $0, 1000000
+	givemoney $0, 1000000
+	givemoney $0, 1000000
+	givemoney $0, 1000000
+	givemoney $0, 1000000
+	givemoney $0, 1000000
+	givemoney $0, 1000000
+	givemoney $0, 1000000
+	givemoney $0, 1000000
+	givemoney $0, 999999
+	; set events
 ;	setevent EVENT_OAK_KNOCKED_OUT
 ;	clearevent EVENT_KNOCKED_OAK_IN_LAB
 ;	setevent EVENT_DEFAULT_OAK_IN_LAB
 ;	setevent EVENT_NEW_BARK_INTRO_FINISHED
 ;	clearevent EVENT_OAK_PERSIST
-	givepoke MEW, 80
+	; give hm slaves
+	givepoke SKARMORY, 99
+	loadvar wPartyMon1Moves+0, FLY
+	loadvar wPartyMon1Moves+1, SURF
+	loadvar wPartyMon1Moves+2, STRENGTH
+	loadvar wPartyMon1Moves+3, CUT
+	loadvar wPartyMon1PP+0, 15
+	loadvar wPartyMon1PP+1, 15
+	loadvar wPartyMon1PP+2, 15
+	loadvar wPartyMon1PP+3, 30
+	; give useful items
+	giveitem BICYCLE
+	giveitem TOWN_MAP
+	giveitem POKE_FLUTE
+	giveitem MAX_REPEL, 99
+	giveitem ESCAPE_ROPE, 99
+	; fly anywhere
+	setflag ENGINE_FLYPOINT_NEW_BARK
+	setflag ENGINE_FLYPOINT_CHERRYGROVE
+	setflag ENGINE_FLYPOINT_VIOLET
+	setflag ENGINE_FLYPOINT_AZALEA
+	setflag ENGINE_FLYPOINT_GOLDENROD
+	setflag ENGINE_FLYPOINT_ECRUTEAK
+	setflag ENGINE_FLYPOINT_OLIVINE
+	setflag ENGINE_FLYPOINT_CIANWOOD
+	setflag ENGINE_FLYPOINT_MAHOGANY
+	setflag ENGINE_FLYPOINT_LAKE_OF_RAGE
+	setflag ENGINE_FLYPOINT_BLACKTHORN
+	; give badges
+	setflag ENGINE_ZEPHYRBADGE
+	setflag ENGINE_HIVEBADGE
+	setflag ENGINE_PLAINBADGE
+	setflag ENGINE_FOGBADGE
+	setflag ENGINE_STORMBADGE
+	setflag ENGINE_MINERALBADGE
+	setflag ENGINE_GLACIERBADGE
+	setflag ENGINE_RISINGBADGE
+	; set scenes
+	setscene SCENE_MEET_ADRIAN
+	closetext
 	end
 
 NewBarkTown_MapEvents:
