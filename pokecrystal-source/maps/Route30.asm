@@ -3,18 +3,76 @@
 	const ROUTE30_YOUNGSTER2
 	const ROUTE30_YOUNGSTER3
 	const ROUTE30_BUG_CATCHER
-	const ROUTE30_YOUNGSTER4
-	const ROUTE30_MONSTER1
-	const ROUTE30_MONSTER2
-	const ROUTE30_FRUIT_TREE1
-	const ROUTE30_FRUIT_TREE2
 	const ROUTE30_COOLTRAINER_F
 	const ROUTE30_POKE_BALL
+	const ROUTE30_ADRIAN
 
 Route30_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_ROUTE30_NOTHING
+	scene_script .DummyScene1 ; SCENE_MEET_ADRIAN
 
 	db 0 ; callbacks
+
+.DummyScene0:
+	end
+
+.DummyScene1:
+	end	
+
+Route30MeetAdrianLeft:
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, DOWN
+	special FadeOutMusic
+	appear ROUTE30_ADRIAN
+	applymovement ROUTE30_ADRIAN, AdrianLeftMovement
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	jp MeetAdrian
+Route30MeetAdrianRight:
+	showemote EMOTE_SHOCK, PLAYER, 15
+	turnobject PLAYER, DOWN
+	special FadeOutMusic
+	appear ROUTE30_ADRIAN
+	applymovement ROUTE30_ADRIAN, AdrianRightMovement
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	jp MeetAdrian
+MeetAdrian:
+	opentext
+	writetext MeetAdrianText
+	waitbutton
+	closetext
+	loadtrainer RIVAL1, RIVAL1_1_RALTS
+	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
+	startbattle
+	dontrestartmapmusic
+	reloadmap
+	iftrue YouBeatAdrian
+	jp AdrianWon
+
+YouBeatAdrian:
+	playmusic MUSIC_RIVAL_AFTER
+	opentext
+	writetext YouBeatAdrianText
+	waitbutton
+	closetext
+	jp AdrianLeaves
+
+AdrianWon:
+	playmusic MUSIC_RIVAL_AFTER
+	opentext
+	writetext AdrianWonText
+	waitbutton
+	closetext
+AdrianLeaves:
+	applymovement AdrianLeavesMovement
+	disappear ROUTE30_ADRIAN
+	setscene SCENE_ROUTE30_NOTHING
+	special HealParty
+	playmapmusic
+	end
+
+MeetAdrianText:
+	text 
 
 YoungsterJoey_ImportantBattleScript:
 	waitsfx
@@ -385,6 +443,50 @@ YoungsterJoeyText_GiveHPUpAfterBattle:
 	line "tougher too."
 	done
 
+AdrianLeftMovement:
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_right
+	step_right
+	step_right
+	step_down
+	step_down
+	step_down
+	step_end
+
+AdrianRightMovement:
+	step_down
+	step_down
+	step_down
+	step_down
+	step_down
+	step_right
+	step_right
+	step_right
+	step_right
+	step_down
+	step_down
+	step_down
+	step_end
+
+AdrianLeavesMovement:
+	step_up
+	step_up
+	step_up
+	step_left
+	step_left
+	step_left
+	step_left
+	step_up
+	step_up
+	step_up
+	step_up
+	step_up
+	step_end
+
 Route30_MapEvents:
 	db 0, 0 ; filler
 
@@ -392,7 +494,9 @@ Route30_MapEvents:
 	warp_event  8, 39, ROUTE_30_BERRY_HOUSE, 1 ; TODO: turn into cave
 	warp_event  3, 25, MR_POKEMONS_HOUSE, 1 ; TODO: turn into TM House
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event  6, 52, SCENE_MEET_ADRIAN, Route30MeetAdrianLeft
+	coord_event  7, 52, SCENE_MEET_ADRIAN, Route30MeetAdrianRight
 
 	db 4 ; bg events
 	bg_event  5, 47, BGEVENT_READ, Route30Sign
@@ -405,8 +509,6 @@ Route30_MapEvents:
 	object_event  8, 43, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerYoungsterJoey, EVENT_ROUTE_30_YOUNGSTER_JOEY
 	object_event 10, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerYoungsterMikey, -1
 	object_event 16, 19, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherDon, -1
-;	object_event  7, 30, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30YoungsterScript, -1
-;	object_event  5, 24, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
-;	object_event  5, 25, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_30_BATTLE
 	object_event  4, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1
 	object_event 17, 38, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30PPUp, EVENT_ROUTE_30_PP_UP
+	object_event  3, 43, SPRITE_ADRIAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_MEET_ADRIAN

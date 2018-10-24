@@ -80,6 +80,9 @@ MapScenes:: ; 4d01e
 	scene_var OLIVINE_PORT,                                wOlivinePortSceneID
 	scene_var VERMILION_PORT,                              wVermilionPortSceneID
 	scene_var FAST_SHIP_1F,                                wFastShip1FSceneID
+	; PWHYD ADDED
+	scene_var ROUTE_30, 							       wRoute30SceneID
+	; UNUSED?
 	scene_var FAST_SHIP_B1F,                               wFastShipB1FSceneID
 	scene_var MOUNT_MOON_SQUARE,                           wMountMoonSquareSceneID
 	scene_var MOBILE_TRADE_ROOM,                           wMobileTradeRoomSceneID
