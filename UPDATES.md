@@ -3,8 +3,10 @@
 
 ## November 11th, 2018 // 7:38PM PST
 I have some important news! You may have noticed, the commits lately have been a bit slow. Well, that's because I've been working on building a new computer! Right now, the PC I am using is an old laptop from 2012. It crashes often, and is really hard to work on. Luckily, I am making some significant headway in building a new one! Unfortunately, until I finish, I will be suspending development. The build should be done by Christmas, so it won't be that big of a halt.
-PROS: Newer PC coming soon, meaning faster builds and more progress!
-CONS: Lack of commits until it is done.
+
+TL;DR:
+- PROS: Newer PC coming soon, meaning faster builds and more progress!
+- CONS: Lack of commits until it is done.
 
 Thanks for reading!
 
