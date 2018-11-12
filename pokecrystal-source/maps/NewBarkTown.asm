@@ -205,6 +205,7 @@ DebugScript:
 ;	setevent EVENT_DEFAULT_OAK_IN_LAB
 ;	setevent EVENT_NEW_BARK_INTRO_FINISHED
 ;	clearevent EVENT_OAK_PERSIST
+	setevent EVENT_MEET_ADRIAN
 	; give hm slaves
 	givepoke SKARMORY, 99
 	loadvar wPartyMon1Moves+0, FLY
@@ -242,8 +243,6 @@ DebugScript:
 	setflag ENGINE_MINERALBADGE
 	setflag ENGINE_GLACIERBADGE
 	setflag ENGINE_RISINGBADGE
-	; set scenes
-	setscene SCENE_MEET_ADRIAN
 	closetext
 	end
 

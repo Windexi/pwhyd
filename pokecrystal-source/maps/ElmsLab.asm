@@ -64,7 +64,7 @@ ElmSaidYes:
 
 StealAPokemon
 	setscene SCENE_ELMSLAB_CANT_LEAVE
-	setscene SCENE_MEET_ADRIAN
+	setevent EVENT_MEET_ADRIAN
 	setevent EVENT_OAK_KNOCKED_OUT
 	clearevent EVENT_KNOCKED_OAK_IN_LAB
 	setevent EVENT_DEFAULT_OAK_IN_LAB

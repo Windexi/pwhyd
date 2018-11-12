@@ -1,6 +1,17 @@
 # Progress Reports!
 ## A dedicated page for notices on important development updates.
 
+## November 11th, 2018 // 7:38PM PST
+I have some important news! You may have noticed, the commits lately have been a bit slow. Well, that's because I've been working on building a new computer! Right now, the PC I am using is an old laptop from 2012. It crashes often, and is really hard to work on. Luckily, I am making some significant headway in building a new one! Unfortunately, until I finish, I will be suspending development. The build should be done by Christmas, so it won't be that big of a halt.
+PROS: Newer PC coming soon, meaning faster builds and more progress!
+CONS: Lack of commits until it is done.
+
+Thanks for reading!
+
+~ Windexi
+
+[Go back](https://github.com/Windexi/pwhyd)
+
 ## October 21st, 2018 // 11:57PM PST
 Hello again! It's time for another status update! For now, Cherrygrove City is also completed, and I have posted Alpha 0.2 over at the [dedicated Builds page.](https://github.com/Windexi/pwhyd/blob/master/BUILDS.md) I've slowly become more and more knowledgeable on Assembly scripting as I go on, and have mostly been working on ironing out the bugs I create with every new commit I push. I'm very excited to continue development on this hack though, and as of now have made some pretty substantial progress! Also, I made a [quick announcement](https://www.reddit.com/r/PokemonROMhacks/comments/9qb380/wip_pokemon_what_have_you_done/) on /r/pokemonromhacks about the project, so hopefully that will spark some interest! I know that it's made me very excited for what's to come. I have definitely altered the story from what it originally was set out to be, and I think it's definitely for the better. As I continue work, I keep coming up with awesome ideas for what I should do next. Stay tuned!
 
