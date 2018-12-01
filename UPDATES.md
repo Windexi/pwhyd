@@ -1,6 +1,16 @@
 # Progress Reports!
 ## A dedicated page for notices on important development updates.
 
+## December 1st, 2018 // 2:25PM PST
+# It's done!
+I'm happy to report that the build is finished and nearly finalized! Currently, I'm only lacking a graphics card and an extra hard drive, but that will change soon when they arrive in the mail. For now, the computer runs great, so I will be focusing on developing here! The 24" monitor should be a nice workspace ;)
+
+I'm excited to get a few builds in!
+
+~ Windexi
+
+[Go back](https://github.com/Windexi/pwhyd)
+
 ## November 11th, 2018 // 7:38PM PST
 I have some important news! You may have noticed, the commits lately have been a bit slow. Well, that's because I've been working on building a new computer! Right now, the PC I am using is an old laptop from 2012. It crashes often, and is really hard to work on. Luckily, I am making some significant headway in building a new one! Unfortunately, until I finish, I will be suspending development. The build should be done by Christmas, so it won't be that big of a halt.
 
