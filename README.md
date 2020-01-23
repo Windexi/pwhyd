@@ -9,7 +9,6 @@
 
 A few things:
 - [Alpha Test Builds](https://github.com/Windexi/pwhyd/blob/master/BUILDS.md)
-- [FAQ](https://github.com/Windexi/pwhyd/blob/master/FAQ.md)
 - [Recommended GB/GBC/GBA Emulator](https://mgba.io/)
 
 Socials:
