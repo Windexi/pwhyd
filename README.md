@@ -1,5 +1,5 @@
 ## Windexi presents...
-## (NOTE) - This project falls into the category of an "abandoned experiment" for now. I may get around to finishing it someday, unfortunately life picked up and I was unable to keep up development.
+## (NOTE) - This project falls under the class "abandoned experiment" for now. I will finish it someday, unfortunately life picked up and I was unable to keep up development.
 
 
 <a name="top" href="http://github.com/Windexi/pwhyd/"><img align="middle" style="margin: -45px;" src="https://github.com/Windexi/pwhyd/blob/master/pwhyd.png?raw=true"></a>
